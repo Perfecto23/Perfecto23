@@ -1,23 +1,23 @@
-## 🚀 About Me
+## 🚀 关于我
 
 <div align="center">
   <img src="https://pic1.imgdb.cn/item/67e512140ba3d5a1d7e515bd.jpg" alt="" width="500" />
 </div>
 
-### <div align="center">Hi, I'm Perfecto, a full-time full-stack developer 👨‍💻</div>
+### <div align="center">你好，我是Perfecto，一名全职全栈开发者 👨‍💻</div>
 
-- 👀 I’m interested in creating the magical stuff 🖤
-- 🌱 I'm currently learning how to use ai to develop world-changing applications 💻
-- 🔍 Enjoys playing with new things every day
-- 📫 How to reach me? kepengcheng314@gmail.com
+- 👀 我热衷于创造神奇的东西 🖤
+- 🌱 我目前正在学习如何使用人工智能开发改变世界的应用程序 💻
+- 🔍 喜欢每天尝试新事物
+- 📫 联系我：kepengcheng314@gmail.com
 
 <p align="center">
-  English | <a href='./README.zh-CN.md'>简体中文</a>
+  <a href='./README.md'>English</a> | 简体中文
 </p>
 
-## Things I use while working!
+## 我工作时使用的工具！
 
-### 📋 Frontend
+### 📋 前端
 
 <div align="center">
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
@@ -53,7 +53,7 @@
   <img src="https://img.shields.io/badge/Windows-0078D6?style=flat-square&logo=windows&logoColor=white" alt="Windows" />
 </div>
 
-### 💾 Backend
+### 💾 后端
 
 <div align="center">
   <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white" />
@@ -72,7 +72,7 @@
   <img src="https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=GNU%20Bash&logoColor=white" alt="Bash" />
 </div>
 
-### 💻 IDEs/Editors
+### 💻 开发工具/编辑器
 
 <div align="center">
   <img src="https://img.shields.io/badge/Cursor-000000?style=flat-square&logo=cursor&logoColor=white" alt="Cursor" />
@@ -94,7 +94,7 @@
   <img src="https://img.shields.io/badge/Docker-0db7ed.svg?style=flat-square&logo=Docker&logoColor=white" alt="Docker" />
 </div>
 
-### 🧑‍💻 Develop Forum
+### 🧑‍💻 开发者论坛
 
 <div align="center">
   <img src="https://img.shields.io/badge/Stackoverflow-FE7A16?style=flat-square&logo=stack-overflow&logoColor=white" alt="Stack Overflow" />
@@ -105,7 +105,7 @@
   <img src="https://img.shields.io/badge/CSDN-FF69B4?style=flat-square&logo=csdn&logoColor=white" alt="CSDN" />
 </div>
 
-## 📊 Github Stats
+## 📊 Github 统计
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Perfecto23&show_icons=true&theme=radical&count_private=true" alt="GitHub Stats" style="width: 400px"/>
@@ -121,4 +121,3 @@
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Perfecto23/Perfecto23/output/github-contribution-grid-snake.svg">
   <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/Perfecto23/Perfecto23/output/github-contribution-grid-snake.svg">
 </picture>
-
