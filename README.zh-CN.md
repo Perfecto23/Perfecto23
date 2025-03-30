@@ -33,24 +33,20 @@
   <img src="https://img.shields.io/badge/Babel-F9DC3e?style=flat-square&logo=babel&logoColor=black" alt="Babel" />
   <img src="https://img.shields.io/badge/RollupJS-ef3335?style=flat-square&logo=rollup.js&logoColor=white" alt="RollupJS" />
   <img src="https://img.shields.io/badge/Vite-646CFF.svg?style=flat-square&logo=vite&logoColor=white" alt="Vite" />
-  <img src="https://img.shields.io/badge/React_Router-CA4245?style=flat-square&logo=react-router&logoColor=white" alt="React Router" />
   <img src="https://img.shields.io/badge/SASS-hotpink.svg?style=flat-square&logo=SASS&logoColor=white" alt="SASS" />
   <img src="https://img.shields.io/badge/Less-2B4C80?style=flat-square&logo=less&logoColor=white" alt="Less" />
-  <img src="https://img.shields.io/badge/Nodemon-323330.svg?style=flat-square&logo=nodemon&logoColor=%BBDEAD" alt="Nodemon" />
-  <img src="https://img.shields.io/badge/Pnpm-4a4a4a.svg?style=flat-square&logo=pnpm&logoColor=f69220" alt="Pnpm" />
+  <img src="https://img.shields.io/badge/Tailwindcss-38B2AC.svg?style=flat-square&logo=tailwind-css&logoColor=white" alt="TailwindCSS" />
   <img src="https://img.shields.io/badge/Npm-CB3837.svg?style=flat-square&logo=npm&logoColor=white" alt="Npm" />
   <img src="https://img.shields.io/badge/Yarn-2C8EBB.svg?style=flat-square&logo=yarn&logoColor=white" alt="Yarn" />
-  <img src="https://img.shields.io/badge/Tailwindcss-38B2AC.svg?style=flat-square&logo=tailwind-css&logoColor=white" alt="TailwindCSS" />
+  <img src="https://img.shields.io/badge/Pnpm-4a4a4a.svg?style=flat-square&logo=pnpm&logoColor=f69220" alt="Pnpm" />
   <img src="https://img.shields.io/badge/ESLint-4B3263?style=flat-square&logo=ESLint&logoColor=white" alt="ESLint" />
   <img src="https://img.shields.io/badge/Prettier-F7B93E.svg?style=flat-square&logo=Prettier&logoColor=white" alt="Prettier" />
   <img src="https://img.shields.io/badge/Jest-C21325?style=flat-square&logo=Jest&logoColor=white" alt="Jest" />
   <img src="https://img.shields.io/badge/Vitest-C21325?style=flat-square&logo=Vitest&logoColor=white" alt="Vitest" />
   <img src="https://img.shields.io/badge/Playwright-C21325?style=flat-square&logo=Playwright&logoColor=white" alt="Playwright" />
-  <img src="https://img.shields.io/badge/-cypress-E5E5E5?style=flat-square&logo=cypress&logoColor=058a5e" alt="cypress" />
+  <img src="https://img.shields.io/badge/Cypress-E5E5E5?style=flat-square&logo=cypress&logoColor=058a5e" alt="cypress" />
   <img src="https://img.shields.io/badge/Storybook-FF4785?style=flat-square&logo=storybook&logoColor=white" alt="Storybook" />
-  <img src="https://img.shields.io/badge/Echarts-000000?style=flat-square&logo=Echarts&logoColor=white" alt="Echarts" />
-  <img src="https://img.shields.io/badge/Mac%20OS-000000?style=flat-square&logo=macos&logoColor=F0F0F0" alt="macOS" />
-  <img src="https://img.shields.io/badge/Windows-0078D6?style=flat-square&logo=windows&logoColor=white" alt="Windows" />
+  <img src="https://img.shields.io/badge/Echarts-000000?style=flat-square&logo=apcheecharts&logoColor=white" alt="Echarts" />
 </div>
 
 ### 💾 后端
@@ -65,21 +61,9 @@
   <img src="https://img.shields.io/badge/Redis-DD0031.svg?style=flat-square&logo=Redis&logoColor=white" alt="Redis" />
   <img src="https://img.shields.io/badge/MongoDB-4ea94b.svg?style=flat-square&logo=MongoDB&logoColor=white" alt="MongoDB" />
   <img src="https://img.shields.io/badge/MySQL-00f.svg?style=flat-square&logo=MySQL&logoColor=white" alt="MySQL" />
-  <img src="https://img.shields.io/badge/iOS-000000?style=flat-square&logo=ios&logoColor=white" alt="iOS" />
   <img src="https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=ubuntu&logoColor=white" alt="Ubuntu" />
   <img src="https://img.shields.io/badge/Cent%20OS-002260?style=flat-square&logo=centos&logoColor=F0F0F0" alt="CentOS" />
   <img src="https://img.shields.io/badge/Nginx-009639.svg?style=flat-square&logo=Nginx&logoColor=white" alt="Nginx" />
-  <img src="https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=GNU%20Bash&logoColor=white" alt="Bash" />
-</div>
-
-### 💻 开发工具/编辑器
-
-<div align="center">
-  <img src="https://img.shields.io/badge/Cursor-000000?style=flat-square&logo=cursor&logoColor=white" alt="Cursor" />
-  <img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=flat-square&logo=Visual%20Studio%20Code&logoColor=white" alt="Visual Studio Code" />
-  <img src="https://img.shields.io/badge/Codesandbox-040404?style=flat-square&logo=codesandbox&logoColor=DBDBDB" alt="CodeSandbox" />
-  <img src="https://img.shields.io/badge/CodePen-white?style=flat-square&logo=codepen&logoColor=black" alt="CodePen" />
-  <img src="https://img.shields.io/badge/Notion-000000.svg?style=flat-square&logo=notion&logoColor=white" alt="Notion" />
 </div>
 
 ### 🎛️ DevOps
@@ -92,6 +76,17 @@
   <img src="https://img.shields.io/badge/Github%20Pages-121013?style=flat-square&logo=github&logoColor=white" alt="Github Pages" />
   <img src="https://img.shields.io/badge/GitHub%20Actions-2671E5.svg?style=flat-square&logo=GitHub%20Actions&logoColor=white" alt="GitHub Actions" />
   <img src="https://img.shields.io/badge/Docker-0db7ed.svg?style=flat-square&logo=Docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=GNU%20Bash&logoColor=white" alt="Bash" />
+</div>
+
+### 💻 开发工具/编辑器
+
+<div align="center">
+  <img src="https://img.shields.io/badge/Cursor-000000?style=flat-square&logo=cursor&logoColor=white" alt="Cursor" />
+  <img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=flat-square&logo=Visual%20Studio%20Code&logoColor=white" alt="Visual Studio Code" />
+  <img src="https://img.shields.io/badge/Codesandbox-040404?style=flat-square&logo=codesandbox&logoColor=DBDBDB" alt="CodeSandbox" />
+  <img src="https://img.shields.io/badge/CodePen-white?style=flat-square&logo=codepen&logoColor=black" alt="CodePen" />
+  <img src="https://img.shields.io/badge/Notion-000000.svg?style=flat-square&logo=notion&logoColor=white" alt="Notion" />
 </div>
 
 ### 🧑‍💻 开发者论坛
