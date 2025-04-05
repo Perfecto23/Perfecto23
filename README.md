@@ -10,6 +10,7 @@
 - 🌱 I'm currently learning how to use ai to develop world-changing applications 💻
 - 🔍 Enjoys playing with new things every day
 - 📫 How to reach me? kepengcheng314@gmail.com
+- ![visitors](https://visitor-badge.glitch.me/badge?page_id=Perfecto23&left_color=green&right_color=red)
 
 <p align="center">
   English | <a href='./README.zh-CN.md'>简体中文</a>
@@ -103,13 +104,13 @@
 ## 📊 Github Stats
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Perfecto23&show_icons=true&theme=radical&count_private=true" alt="GitHub Stats" style="width: 400px"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Perfecto23&theme=radical&hide_border=true" style="width: 500px" alt="GitHub Streak"/>
 </div>
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Perfecto23&layout=compact" alt="GitHub Stats" style="width: 400px"/>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Perfecto23&theme=radical&count_private=true" alt="GitHub Activity Graph" style="width: 500px"/>
 </div>
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Perfecto23&theme=radical&count_private=true" alt="GitHub Activity Graph" style="width: 400px"/>
+  <img src="https://github-profile-trophy.vercel.app/?username=Perfecto23" alt="Trophies"/>
 </div>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Perfecto23/Perfecto23/output/github-contribution-grid-snake-dark.svg">
