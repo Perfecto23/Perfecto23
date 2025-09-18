@@ -1,22 +1,33 @@
 ## 🚀 关于我
 
 <div align="center">
-  <img src="https://pic1.imgdb.cn/item/67e512140ba3d5a1d7e515bd.jpg" alt="" width="500" />
+  <img src="https://pic1.imgdb.cn/item/67e512140ba3d5a1d7e515bd.jpg" alt="Banner" width="500" />
 </div>
 
-### <div align="center">你好，我是Perfecto，一名全职全栈开发者 👨‍💻</div>
+<h3 align="center">你好，我是Perfecto，一名前端开发工程师 👨‍💻</h3>
 
-- 👀 我热衷于创造神奇的东西 🖤
-- 🌱 我目前正在学习如何使用人工智能开发改变世界的应用程序 💻
-- 🔍 喜欢每天尝试新事物
-- 📫 联系我：kepengcheng314@gmail.com
-- ![visitors](https://visitor-badge.glitch.me/badge?page_id=Perfecto23&left_color=green&right_color=red)
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=欢迎访问我的Github主页&center=true" alt="Typing SVG" />
+</div>
+
+- 🌱 我目前正在使用 AI 创造有意思的东西
+- 🤔 我正在寻找一份前端开发的工作
+- 📫 如何联系我: kepengcheng314@gmail.com
+- 😄 一起无限进步！
+
+<div align="center">
+  <img src="https://img.shields.io/github/followers/Perfecto23?style=for-the-badge&color=06b6d4&labelColor=0f172a&logo=github&logoColor=06b6d4" alt="关注者"/>
+  <img src="https://img.shields.io/github/stars/Perfecto23?affiliations=OWNER%2CCOLLABORATOR&style=for-the-badge&color=8b5cf6&labelColor=0f172a&logo=github&logoColor=8b5cf6" alt="星标数"/>
+  <img src="https://komarev.com/ghpvc/?username=Perfecto23&color=06b6d4&style=for-the-badge&label=Profile+Views" alt="主页访问量"/>
+</div>
 
 <p align="center">
   <a href='./README.md'>English</a> | 简体中文
 </p>
 
-## 我工作时使用的工具！
+<details>
+<summary>💻 我的技术栈 (点击展开)</summary>
+<br>
 
 ### 📋 前端
 
@@ -101,19 +112,51 @@
   <img src="https://img.shields.io/badge/CSDN-FF69B4?style=flat-square&logo=csdn&logoColor=white" alt="CSDN" />
 </div>
 
-## 📊 Github 统计
+</details>
+
+## 📊 GitHub 统计
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Perfecto23&theme=radical&hide_border=true" style="width: 500px" alt="GitHub Streak"/>
-</div>
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Perfecto23&theme=radical&count_private=true" alt="GitHub Activity Graph" style="width: 500px"/>
-</div>
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Perfecto23" alt="Trophies"/>
-</div>
+
+<br>
+
+### 🔥 连续贡献与活动
+<img src="https://github-readme-streak-stats.herokuapp.com?user=Perfecto23&theme=radical&locale=zh_Hans" width="40%" alt="GitHub 连续贡献" />
+<img src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=Perfecto23&show_icons=true&theme=radical&icon_color=8b5cf6&border_color=1e293b&hide_border=true&include_all_commits=true" width="40%" alt="GitHub 统计"/>
+
+### 💻 最常用语言  
+<img src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Perfecto23&layout=compact&theme=radical&border_color=1e293b&hide_border=true&langs_count=8" width="40%" alt="最常用语言"/>
+<img src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Perfecto23&layout=donut&theme=radical&hide_border=true&langs_count=6" width="40%" alt="语言分布环形图"/>
+
+### 📊 语言分布
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Perfecto23&theme=radical" width="40%" alt="各语言仓库分布"/>
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Perfecto23&theme=radical" width="40%" alt="提交次数最多的语言"/>
+
+<br>
+
+### 📈 活跃度图表  
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=Perfecto23&bg_color=ffcfe9&color=9e4c98&line=9e4c98&point=403d3d&area=true&hide_border=true" width="100%" alt="GitHub 活跃度图表"/>
+
+### 📊 GitHub 概览
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Perfecto23&theme=radical" width="100%" alt="GitHub 概览"/>
+
+<br>
+
+### 🏆 成就徽章
+<img src="https://github-profile-trophy.vercel.app/?username=Perfecto23&theme=radical&no-frame=true&column=4&margin-w=15&margin-h=15" width="100%" alt="成就徽章"/>
+
+<br>
+
+### ⏱️ 编程时间与统计
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Perfecto23&theme=radical&utcOffset=8" width="40%" alt="高效编程时间"/>
+
+<br>
+
+### 🐍 贡献贪吃蛇
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Perfecto23/Perfecto23/output/github-contribution-grid-snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Perfecto23/Perfecto23/output/github-contribution-grid-snake.svg">
-  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/Perfecto23/Perfecto23/output/github-contribution-grid-snake.svg">
+  <img alt="GitHub 贡献图贪吃蛇动画" src="https://raw.githubusercontent.com/Perfecto23/Perfecto23/output/github-contribution-grid-snake.svg" width="100%">
 </picture>
+
+</div>

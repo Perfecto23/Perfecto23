@@ -1,22 +1,33 @@
 ## 🚀 About Me
 
 <div align="center">
-  <img src="https://pic1.imgdb.cn/item/67e512140ba3d5a1d7e515bd.jpg" alt="" width="500" />
+  <img src="https://pic1.imgdb.cn/item/67e512140ba3d5a1d7e515bd.jpg" alt="Banner" width="500" />
 </div>
 
-### <div align="center">Hi, I'm Perfecto, a full-time full-stack developer 👨‍💻</div>
+<h3 align="center">Hi, I'm Perfecto, a Front-end Developer 👨‍💻</h3>
 
-- 👀 I’m interested in creating the magical stuff 🖤
-- 🌱 I'm currently learning how to use ai to develop world-changing applications 💻
-- 🔍 Enjoys playing with new things every day
-- 📫 How to reach me? kepengcheng314@gmail.com
-- ![visitors](https://visitor-badge.glitch.me/badge?page_id=Perfecto23&left_color=green&right_color=red)
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=Welcome+to+my+GitHub+homepage&center=true" alt="Typing SVG" />
+</div>
+
+- 🌱 I'm currently creating interesting things with AI.
+- 🤔 I'm looking for a full-time front-end development job.
+- 📫 Contact me: kepengcheng314@gmail.com
+- 😄 Let's make unlimited progress together!
+
+<div align="center">
+  <img src="https://img.shields.io/github/followers/Perfecto23?style=for-the-badge&color=06b6d4&labelColor=0f172a&logo=github&logoColor=06b6d4" alt="Followers"/>
+  <img src="https://img.shields.io/github/stars/Perfecto23?affiliations=OWNER%2CCOLLABORATOR&style=for-the-badge&color=8b5cf6&labelColor=0f172a&logo=github&logoColor=8b5cf6" alt="Stars"/>
+  <img src="https://komarev.com/ghpvc/?username=Perfecto23&color=06b6d4&style=for-the-badge&label=Profile+Views" alt="Profile Views"/>
+</div>
 
 <p align="center">
   English | <a href='./README.zh-CN.md'>简体中文</a>
 </p>
 
-## Things I use while working!
+<details>
+<summary>💻 My Technology Stack (Click to expand)</summary>
+<br>
 
 ### 📋 Frontend
 
@@ -101,20 +112,51 @@
   <img src="https://img.shields.io/badge/CSDN-FF69B4?style=flat-square&logo=csdn&logoColor=white" alt="CSDN" />
 </div>
 
+</details>
+
 ## 📊 Github Stats
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Perfecto23&theme=radical&hide_border=true" style="width: 500px" alt="GitHub Streak"/>
-</div>
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Perfecto23&theme=radical&count_private=true" alt="GitHub Activity Graph" style="width: 500px"/>
-</div>
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Perfecto23" alt="Trophies"/>
-</div>
+
+<br>
+
+### 🔥 Streak & Activity
+<img src="https://github-readme-streak-stats.herokuapp.com?user=Perfecto23&theme=radical" width="40%" alt="GitHub Streak" />
+<img src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=Perfecto23&show_icons=true&theme=radical&icon_color=8b5cf6&border_color=1e293b&hide_border=true&include_all_commits=true" width="40%" alt="GitHub Stats"/>
+
+### 💻 Most Used Languages  
+<img src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Perfecto23&layout=compact&theme=radical&border_color=1e293b&hide_border=true&langs_count=8" width="40%" alt="Top Languages"/>
+<img src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Perfecto23&layout=donut&theme=radical&hide_border=true&langs_count=6" width="40%" alt="Languages Donut Chart"/>
+
+### 📊 Language Distribution
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Perfecto23&theme=radical" width="40%" alt="Repos per Language"/>
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Perfecto23&theme=radical" width="40%" alt="Most Commit Language"/>
+
+<br>
+
+### 📈 Activity Graph  
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=Perfecto23&bg_color=ffcfe9&color=9e4c98&line=9e4c98&point=403d3d&area=true&hide_border=true" width="100%" alt="GitHub Activity Graph"/>
+
+### 📊 GitHub Overview
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Perfecto23&theme=radical" width="100%" alt="GitHub Overview"/>
+
+<br>
+
+### 🏆 Achievements
+<img src="https://github-profile-trophy.vercel.app/?username=Perfecto23&theme=radical&no-frame=true&column=4&margin-w=15&margin-h=15" width="100%" alt="Trophies"/>
+
+<br>
+
+### ⏱️ Coding Time & Stats
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Perfecto23&theme=radical&utcOffset=8" width="40%" alt="Productive Time"/>
+
+<br>
+
+### 🐍 Contribution Snake
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Perfecto23/Perfecto23/output/github-contribution-grid-snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Perfecto23/Perfecto23/output/github-contribution-grid-snake.svg">
-  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/Perfecto23/Perfecto23/output/github-contribution-grid-snake.svg">
+  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/Perfecto23/Perfecto23/output/github-contribution-grid-snake.svg" width="100%">
 </picture>
 
+</div>
