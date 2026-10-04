@@ -1,0 +1,77 @@
+{
+  "streak.svg": {
+    "source_url": "https://github-readme-streak-stats.herokuapp.com?user=Perfecto23&theme=radical",
+    "captured_at": "2026-10-04T16:56:41+00:00",
+    "status": "last-good retained after TLS failure"
+  },
+  "github-stats-original-rank.svg": {
+    "source_url": "https://github-readme-stats.anuraghazra1.vercel.app/api?username=Perfecto23&show_icons=true&theme=radical&icon_color=8b5cf6&border_color=1e293b&hide_border=true&include_all_commits=true",
+    "captured_at": "2026-10-04T17:26:10+00:00",
+    "status": "valid; GitHub-only refresh"
+  },
+  "github-stats.svg": {
+    "source_url": "https://github-readme-stats.vercel.app/api?username=Perfecto23&show_icons=true&theme=transparent&include_all_commits=true",
+    "captured_at": "2026-10-04T17:26:10+00:00",
+    "status": "valid; GitHub-only refresh"
+  },
+  "languages-compact.svg": {
+    "source_url": "https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Perfecto23&layout=compact&theme=radical&border_color=1e293b&hide_border=true&langs_count=8",
+    "captured_at": "2026-10-04T17:26:10+00:00",
+    "status": "valid; GitHub-only refresh"
+  },
+  "languages-bars.svg": {
+    "source_url": "https://github-readme-stats.vercel.app/api/top-langs/?username=Perfecto23&layout=normal&theme=transparent&langs_count=8",
+    "captured_at": "2026-10-04T17:26:10+00:00",
+    "status": "valid; GitHub-only refresh"
+  },
+  "languages-donut.svg": {
+    "source_url": "https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Perfecto23&layout=donut&theme=radical&hide_border=true&langs_count=6",
+    "captured_at": "2026-10-04T17:26:10+00:00",
+    "status": "valid; GitHub-only refresh"
+  },
+  "languages-repo.svg": {
+    "source_url": "https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Perfecto23&theme=radical",
+    "captured_at": "2026-10-04T17:26:10+00:00",
+    "status": "valid; GitHub-only refresh"
+  },
+  "languages-commit.svg": {
+    "source_url": "https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Perfecto23&theme=radical",
+    "captured_at": "2026-10-04T17:26:10+00:00",
+    "status": "valid; GitHub-only refresh"
+  },
+  "overview.svg": {
+    "source_url": "https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Perfecto23&theme=radical",
+    "captured_at": "2026-10-04T17:26:10+00:00",
+    "status": "valid; GitHub-only refresh"
+  },
+  "productive-time.svg": {
+    "source_url": "https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Perfecto23&theme=radical&utcOffset=8",
+    "captured_at": "2026-10-04T17:26:10+00:00",
+    "status": "valid; GitHub-only refresh"
+  },
+  "snake-dark.svg": {
+    "source_url": "https://raw.githubusercontent.com/Perfecto23/Perfecto23/output/github-contribution-grid-snake-dark.svg",
+    "captured_at": "2026-10-04T17:26:10+00:00",
+    "status": "valid; GitHub-only refresh"
+  },
+  "snake-light.svg": {
+    "source_url": "https://raw.githubusercontent.com/Perfecto23/Perfecto23/output/github-contribution-grid-snake.svg",
+    "captured_at": "2026-10-04T17:26:10+00:00",
+    "status": "valid; GitHub-only refresh"
+  },
+  "asset-01.svg": {
+    "source_url": "https://img.shields.io/github/followers/Perfecto23?style=for-the-badge&color=06b6d4&labelColor=0f172a&logo=github&logoColor=06b6d4",
+    "captured_at": "2026-10-04T17:26:10+00:00",
+    "status": "valid; GitHub-only refresh"
+  },
+  "asset-02.svg": {
+    "source_url": "https://img.shields.io/github/stars/Perfecto23?affiliations=OWNER%2CCOLLABORATOR&style=for-the-badge&color=8b5cf6&labelColor=0f172a&logo=github&logoColor=8b5cf6",
+    "captured_at": "2026-10-04T17:26:10+00:00",
+    "status": "valid; GitHub-only refresh"
+  },
+  "asset-03.svg": {
+    "source_url": "https://komarev.com/ghpvc/?username=Perfecto23&color=06b6d4&style=for-the-badge&label=Profile+Views",
+    "captured_at": "2026-10-04T17:26:10+00:00",
+    "status": "valid; GitHub-only refresh"
+  }
+}

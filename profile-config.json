@@ -1,0 +1,28 @@
+{
+  "github_username": "Perfecto23",
+  "tokentracker_user_id": "b6f3aece-2e2d-4764-91aa-963aa814aca0",
+  "timezone": "UTC",
+  "exclude_repo_owners": [
+    "Perfecto23",
+    "MoeGo",
+    "moego-ai",
+    "moego-pet"
+  ],
+  "exclude_repo_owner_patterns": [
+    "moego*"
+  ],
+  "exclude_repositories": [],
+  "max_projects_displayed": 12,
+  "project_labels": {
+    "langgenius/dify": "Dify",
+    "web-infra-dev/rspack": "Rspack",
+    "Tencent/WeKnora": "Tencent WeKnora"
+  },
+  "identity": {
+    "name": "Perfecto",
+    "location": "Shenzhen",
+    "role": "Full-stack engineer",
+    "focus": "AI agents \u00b7 Developer tooling \u00b7 Reliable workflows"
+  },
+  "only_organization_upstreams": true
+}

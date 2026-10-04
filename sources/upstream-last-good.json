@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-10-04T17:28:39+00:00",
+  "scope": "Public merged authored organization-upstream PRs; deduplicated; personal/self/company/forks excluded",
+  "projects": [
+    {
+      "full_name": "Tencent/WeKnora",
+      "name": "Tencent WeKnora",
+      "url": "https://github.com/Tencent/WeKnora",
+      "merged_authored_pr_count": 3
+    },
+    {
+      "full_name": "heroui-inc/heroui-cli",
+      "name": "heroui-cli",
+      "url": "https://github.com/heroui-inc/heroui-cli",
+      "merged_authored_pr_count": 1
+    },
+    {
+      "full_name": "langgenius/dify",
+      "name": "Dify",
+      "url": "https://github.com/langgenius/dify",
+      "merged_authored_pr_count": 1
+    },
+    {
+      "full_name": "pnpm/pnpm",
+      "name": "pnpm",
+      "url": "https://github.com/pnpm/pnpm",
+      "merged_authored_pr_count": 1
+    },
+    {
+      "full_name": "web-infra-dev/rspack",
+      "name": "Rspack",
+      "url": "https://github.com/web-infra-dev/rspack",
+      "merged_authored_pr_count": 1
+    }
+  ],
+  "excluded_owners": [
+    "Perfecto23",
+    "MoeGo",
+    "moego-ai",
+    "moego-pet"
+  ]
+}

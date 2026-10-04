@@ -1,0 +1,620 @@
+[
+  {
+    "url": "https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=Welcome+to+my+GitHub+homepage&center=true",
+    "path": "assets/asset-00.svg",
+    "status": 200,
+    "mime": "image/svg+xml",
+    "bytes": 5777,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/github/followers/Perfecto23?style=for-the-badge&color=06b6d4&labelColor=0f172a&logo=github&logoColor=06b6d4",
+    "path": "assets/asset-01.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1865,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/github/stars/Perfecto23?affiliations=OWNER%2CCOLLABORATOR&style=for-the-badge&color=8b5cf6&labelColor=0f172a&logo=github&logoColor=8b5cf6",
+    "path": "assets/asset-02.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1837,
+    "usable": true
+  },
+  {
+    "url": "https://komarev.com/ghpvc/?username=Perfecto23&color=06b6d4&style=for-the-badge&label=Profile+Views",
+    "path": "assets/asset-03.svg",
+    "status": 200,
+    "mime": "image/svg+xml",
+    "bytes": 649,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black",
+    "path": "assets/asset-04.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1884,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white",
+    "path": "assets/asset-05.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 2300,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Vue.js-35495e.svg?style=flat-square&logo=vuedotjs&logoColor=4FC08D",
+    "path": "assets/asset-06.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 836,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black",
+    "path": "assets/asset-07.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 4473,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white",
+    "path": "assets/asset-08.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 2711,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white",
+    "path": "assets/asset-09.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 997,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white",
+    "path": "assets/asset-10.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 464,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Next-black?style=flat-square&logo=next.js&logoColor=white",
+    "path": "assets/asset-11.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 984,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Jquery-0769AD.svg?style=flat-square&logo=jquery&logoColor=white",
+    "path": "assets/asset-12.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 5028,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Webpack-8DD6F9.svg?style=flat-square&logo=webpack&logoColor=black",
+    "path": "assets/asset-13.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1395,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Babel-F9DC3e?style=flat-square&logo=babel&logoColor=black",
+    "path": "assets/asset-14.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 5817,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/RollupJS-ef3335?style=flat-square&logo=rollup.js&logoColor=white",
+    "path": "assets/asset-15.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1494,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Vite-646CFF.svg?style=flat-square&logo=vite&logoColor=white",
+    "path": "assets/asset-16.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1154,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/SASS-hotpink.svg?style=flat-square&logo=SASS&logoColor=white",
+    "path": "assets/asset-17.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 2186,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Less-2B4C80?style=flat-square&logo=less&logoColor=white",
+    "path": "assets/asset-18.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 4598,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Tailwindcss-38B2AC.svg?style=flat-square&logo=tailwind-css&logoColor=white",
+    "path": "assets/asset-19.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1379,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Npm-CB3837.svg?style=flat-square&logo=npm&logoColor=white",
+    "path": "assets/asset-20.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 975,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Yarn-2C8EBB.svg?style=flat-square&logo=yarn&logoColor=white",
+    "path": "assets/asset-21.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 3134,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Pnpm-4a4a4a.svg?style=flat-square&logo=pnpm&logoColor=f69220",
+    "path": "assets/asset-22.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1018,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/ESLint-4B3263?style=flat-square&logo=ESLint&logoColor=white",
+    "path": "assets/asset-23.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1552,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Prettier-F7B93E.svg?style=flat-square&logo=Prettier&logoColor=white",
+    "path": "assets/asset-24.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 3002,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Jest-C21325?style=flat-square&logo=Jest&logoColor=white",
+    "path": "assets/asset-25.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 4158,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Vitest-C21325?style=flat-square&logo=Vitest&logoColor=white",
+    "path": "assets/asset-26.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 980,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Playwright-C21325?style=flat-square&logo=Playwright&logoColor=white",
+    "path": "assets/asset-27.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 482,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Cypress-E5E5E5?style=flat-square&logo=cypress&logoColor=058a5e",
+    "path": "assets/asset-28.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 2567,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Storybook-FF4785?style=flat-square&logo=storybook&logoColor=white",
+    "path": "assets/asset-29.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1441,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Echarts-000000?style=flat-square&logo=apcheecharts&logoColor=white",
+    "path": "assets/asset-30.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 473,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white",
+    "path": "assets/asset-31.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 6214,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Nestjs-E0234E.svg?style=flat-square&logo=nestjs&logoColor=white",
+    "path": "assets/asset-32.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 8984,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/TypeORM-3982CE?style=flat-square&logo=TypeORM&logoColor=white",
+    "path": "assets/asset-33.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 8571,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/PM2-2B037A?style=flat-square&logo=pm2&logoColor=white",
+    "path": "assets/asset-34.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 8207,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Express.js-404d59.svg?style=flat-square&logo=express&logoColor=61DAFB",
+    "path": "assets/asset-35.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1856,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Redis-DD0031.svg?style=flat-square&logo=Redis&logoColor=white",
+    "path": "assets/asset-36.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1545,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/MongoDB-4ea94b.svg?style=flat-square&logo=MongoDB&logoColor=white",
+    "path": "assets/asset-37.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1267,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/MySQL-00f.svg?style=flat-square&logo=MySQL&logoColor=white",
+    "path": "assets/asset-38.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 5390,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=ubuntu&logoColor=white",
+    "path": "assets/asset-39.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1828,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Cent%20OS-002260?style=flat-square&logo=centos&logoColor=F0F0F0",
+    "path": "assets/asset-40.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 2227,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Nginx-009639.svg?style=flat-square&logo=Nginx&logoColor=white",
+    "path": "assets/asset-41.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1109,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Git-F05033.svg?style=flat-square&logo=Git&logoColor=white",
+    "path": "assets/asset-42.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1123,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/GitHub-121011.svg?style=flat-square&logo=GitHub&logoColor=white",
+    "path": "assets/asset-43.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1660,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/GitLab-E65328.svg?style=flat-square&logo=GitLab&logoColor=white",
+    "path": "assets/asset-44.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1328,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Vercel-000000.svg?style=flat-square&logo=vercel&logoColor=white",
+    "path": "assets/asset-45.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 740,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Github%20Pages-121013?style=flat-square&logo=github&logoColor=white",
+    "path": "assets/asset-46.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1680,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/GitHub%20Actions-2671E5.svg?style=flat-square&logo=GitHub%20Actions&logoColor=white",
+    "path": "assets/asset-47.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 2890,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Docker-0db7ed.svg?style=flat-square&logo=Docker&logoColor=white",
+    "path": "assets/asset-48.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 2916,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=GNU%20Bash&logoColor=white",
+    "path": "assets/asset-49.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 3266,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Cursor-000000?style=flat-square&logo=cursor&logoColor=white",
+    "path": "assets/asset-50.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1168,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=flat-square&logo=Visual%20Studio%20Code&logoColor=white",
+    "path": "assets/asset-51.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 509,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Codesandbox-040404?style=flat-square&logo=codesandbox&logoColor=DBDBDB",
+    "path": "assets/asset-52.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 801,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/CodePen-white?style=flat-square&logo=codepen&logoColor=black",
+    "path": "assets/asset-53.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 481,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Notion-000000.svg?style=flat-square&logo=notion&logoColor=white",
+    "path": "assets/asset-54.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1868,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Stackoverflow-FE7A16?style=flat-square&logo=stack-overflow&logoColor=white",
+    "path": "assets/asset-55.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1175,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/LeetCode-000000?style=flat-square&logo=LeetCode&logoColor=#d16c06",
+    "path": "assets/asset-56.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1790,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Codepen-000000?style=flat-square&logo=Codepen&logoColor=white",
+    "path": "assets/asset-57.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 473,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Reddit-FF4500?style=flat-square&logo=reddit&logoColor=white",
+    "path": "assets/asset-58.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 2208,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/Juejin-blue?style=flat-square&logo=juejin&logoColor=white",
+    "path": "assets/asset-59.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 1036,
+    "usable": true
+  },
+  {
+    "url": "https://img.shields.io/badge/CSDN-FF69B4?style=flat-square&logo=csdn&logoColor=white",
+    "path": "assets/asset-60.svg",
+    "status": 200,
+    "mime": "image/svg+xml;charset=utf-8",
+    "bytes": 3654,
+    "usable": true
+  },
+  {
+    "url": "https://github-readme-streak-stats.herokuapp.com?user=Perfecto23&theme=radical",
+    "path": "assets/asset-61.svg",
+    "status": 200,
+    "mime": "image/svg+xml",
+    "bytes": 7032,
+    "usable": true
+  },
+  {
+    "url": "https://github-readme-stats.anuraghazra1.vercel.app/api?username=Perfecto23&show_icons=true&theme=radical&icon_color=8b5cf6&border_color=1e293b&hide_border=true&include_all_commits=true",
+    "path": "assets/asset-62.svg",
+    "status": 200,
+    "mime": "image/svg+xml; charset=utf-8",
+    "bytes": 7002,
+    "usable": true
+  },
+  {
+    "url": "https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Perfecto23&layout=compact&theme=radical&border_color=1e293b&hide_border=true&langs_count=8",
+    "path": "assets/asset-63.svg",
+    "status": 200,
+    "mime": "image/svg+xml; charset=utf-8",
+    "bytes": 5313,
+    "usable": true
+  },
+  {
+    "url": "https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Perfecto23&layout=donut&theme=radical&hide_border=true&langs_count=6",
+    "path": "assets/asset-64.svg",
+    "status": 200,
+    "mime": "image/svg+xml; charset=utf-8",
+    "bytes": 4563,
+    "usable": true
+  },
+  {
+    "url": "https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Perfecto23&theme=radical",
+    "path": "assets/asset-65.svg",
+    "status": 200,
+    "mime": "image/svg+xml; charset=utf-8",
+    "bytes": 2160,
+    "usable": true
+  },
+  {
+    "url": "https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Perfecto23&theme=radical",
+    "path": "assets/asset-66.svg",
+    "status": 200,
+    "mime": "image/svg+xml; charset=utf-8",
+    "bytes": 2728,
+    "usable": true
+  },
+  {
+    "url": "https://github-readme-activity-graph.vercel.app/graph?username=Perfecto23&bg_color=ffcfe9&color=9e4c98&line=9e4c98&point=403d3d&area=true&hide_border=true",
+    "usable": false,
+    "error": "HTTP Error 402: Payment Required"
+  },
+  {
+    "url": "https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Perfecto23&theme=radical",
+    "path": "assets/asset-68.svg",
+    "status": 200,
+    "mime": "image/svg+xml; charset=utf-8",
+    "bytes": 8938,
+    "usable": true
+  },
+  {
+    "url": "https://github-profile-trophy.vercel.app/?username=Perfecto23&theme=radical&no-frame=true&column=4&margin-w=15&margin-h=15",
+    "usable": false,
+    "error": "HTTP Error 402: Payment Required"
+  },
+  {
+    "url": "https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Perfecto23&theme=radical&utcOffset=8",
+    "path": "assets/asset-70.svg",
+    "status": 200,
+    "mime": "image/svg+xml; charset=utf-8",
+    "bytes": 6580,
+    "usable": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Perfecto23/Perfecto23/output/github-contribution-grid-snake-dark.svg",
+    "path": "assets/asset-71.svg",
+    "status": 200,
+    "mime": "image/svg+xml",
+    "bytes": 85942,
+    "usable": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Perfecto23/Perfecto23/output/github-contribution-grid-snake.svg",
+    "path": "assets/asset-72.svg",
+    "status": 200,
+    "mime": "image/svg+xml",
+    "bytes": 85942,
+    "usable": true
+  },
+  {
+    "url": "https://github-readme-streak-stats-eight.vercel.app/?user=Perfecto23&theme=transparent&ring=8b5cf6&fire=06b6d4&currStreakLabel=8b5cf6",
+    "path": "assets/asset-73.svg",
+    "status": 200,
+    "mime": "image/svg+xml",
+    "bytes": 7049,
+    "usable": true
+  },
+  {
+    "url": "https://github-readme-stats.vercel.app/api?username=Perfecto23&show_icons=true&theme=transparent&include_all_commits=true",
+    "path": "assets/asset-74.svg",
+    "status": 200,
+    "mime": "image/svg+xml; charset=utf-8",
+    "bytes": 7720,
+    "usable": true
+  },
+  {
+    "url": "https://github-readme-stats.vercel.app/api/top-langs/?username=Perfecto23&layout=compact&theme=transparent&langs_count=8",
+    "path": "assets/asset-75.svg",
+    "status": 200,
+    "mime": "image/svg+xml; charset=utf-8",
+    "bytes": 6722,
+    "usable": true
+  },
+  {
+    "url": "https://github-readme-stats.vercel.app/api/top-langs/?username=Perfecto23&layout=normal&theme=transparent&langs_count=8",
+    "path": "assets/asset-76.svg",
+    "status": 200,
+    "mime": "image/svg+xml; charset=utf-8",
+    "bytes": 7820,
+    "usable": true
+  },
+  {
+    "url": "https://srctyff5.us-east.insforge.app/functions/tokentracker-embed-svg?user_id=b6f3aece-2e2d-4764-91aa-963aa814aca0&theme=dark",
+    "path": "assets/asset-77.svg",
+    "status": 200,
+    "mime": "image/svg+xml; charset=utf-8",
+    "bytes": 2265,
+    "usable": true
+  }
+]

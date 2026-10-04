@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "source": "TokenTracker public profile heatmap; all models included",
+  "captured_at": "2026-10-04T16:55:28Z",
+  "timezone": "UTC",
+  "window": [
+    "2026-09-05",
+    "2026-10-04"
+  ],
+  "total_tokens": 20772897628,
+  "daily_average_tokens": 692429920.9333333,
+  "models": [
+    {
+      "name": "gpt-6-astra",
+      "tokens": 12523469639
+    },
+    {
+      "name": "gpt-5.6-sol",
+      "tokens": 4663104821
+    },
+    {
+      "name": "gpt-5.6-luna",
+      "tokens": 2827842540
+    },
+    {
+      "name": "gpt-5.6-terra",
+      "tokens": 239089675
+    },
+    {
+      "name": "gpt-6-sol",
+      "tokens": 184016171
+    }
+  ],
+  "days": [
+    {
+      "date": "2026-09-05",
+      "total_tokens": 1215220704
+    },
+    {
+      "date": "2026-09-06",
+      "total_tokens": 1378302519
+    },
+    {
+      "date": "2026-09-07",
+      "total_tokens": 1099511784
+    },
+    {
+      "date": "2026-09-08",
+      "total_tokens": 1375158858
+    },
+    {
+      "date": "2026-09-09",
+      "total_tokens": 452005428
+    },
+    {
+      "date": "2026-09-10",
+      "total_tokens": 1158917752
+    },
+    {
+      "date": "2026-09-11",
+      "total_tokens": 1047303070
+    },
+    {
+      "date": "2026-09-12",
+      "total_tokens": 1090273254
+    },
+    {
+      "date": "2026-09-13",
+      "total_tokens": 1370722427
+    },
+    {
+      "date": "2026-09-14",
+      "total_tokens": 840726642
+    },
+    {
+      "date": "2026-09-15",
+      "total_tokens": 1389288010
+    },
+    {
+      "date": "2026-09-16",
+      "total_tokens": 1132684986
+    },
+    {
+      "date": "2026-09-17",
+      "total_tokens": 675594153
+    },
+    {
+      "date": "2026-09-18",
+      "total_tokens": 786675993
+    },
+    {
+      "date": "2026-09-19",
+      "total_tokens": 554306192
+    },
+    {
+      "date": "2026-09-20",
+      "total_tokens": 786194627
+    },
+    {
+      "date": "2026-09-21",
+      "total_tokens": 1140869216
+    },
+    {
+      "date": "2026-09-22",
+      "total_tokens": 244142768
+    },
+    {
+      "date": "2026-09-23",
+      "total_tokens": 167773755
+    },
+    {
+      "date": "2026-09-24",
+      "total_tokens": 584565267
+    },
+    {
+      "date": "2026-09-25",
+      "total_tokens": 464583526
+    },
+    {
+      "date": "2026-09-26",
+      "total_tokens": 1170605786
+    },
+    {
+      "date": "2026-09-27",
+      "total_tokens": 116597910
+    },
+    {
+      "date": "2026-09-28",
+      "total_tokens": 157646979
+    },
+    {
+      "date": "2026-09-29",
+      "total_tokens": 53006958
+    },
+    {
+      "date": "2026-09-30",
+      "total_tokens": 41599538
+    },
+    {
+      "date": "2026-10-01",
+      "total_tokens": 41518980
+    },
+    {
+      "date": "2026-10-02",
+      "total_tokens": 92783355
+    },
+    {
+      "date": "2026-10-03",
+      "total_tokens": 51537656
+    },
+    {
+      "date": "2026-10-04",
+      "total_tokens": 92779535
+    }
+  ],
+  "current_day_partial": true,
+  "model_count": 11,
+  "models_display_scope": "Top 5 only; full source total retained"
+}
