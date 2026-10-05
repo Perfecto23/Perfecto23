@@ -279,7 +279,7 @@ def check():
     readme = (ROOT / 'README.md').read_text()
     assert readme.count('<details>') == readme.count('</details>')
     assert readme.count('<picture>') == readme.count('</picture>')
-    for path in re.findall(r'src="(assets/[^"\s]+)"', readme):
+    for path in re.findall(r'(?:src|srcset)="(assets/[^"\s]+)"', readme):
         assert (ROOT / path).is_file(), path
     for path in (ROOT / 'assets').glob('*.svg'): ET.parse(path)
     validate_productive((ROOT / 'assets/productive-time.svg').read_bytes())
