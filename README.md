@@ -16,7 +16,7 @@
 
 [Email](mailto:kepengcheng314@gmail.com) · [GitHub](https://github.com/Perfecto23) · [TokenTracker](https://www.tokentracker.cc/u/b6f3aece-2e2d-4764-91aa-963aa814aca0)
 
-<img src="https://img.shields.io/github/followers/Perfecto23?style=for-the-badge&amp;color=38bdae&amp;labelColor=1a1b27&amp;logo=github&amp;logoColor=38bdae" alt="Followers" /> <img src="https://img.shields.io/github/stars/Perfecto23?affiliations=OWNER%2CCOLLABORATOR&amp;style=for-the-badge&amp;color=bf91f3&amp;labelColor=1a1b27&amp;logo=github&amp;logoColor=bf91f3" alt="Stars" /> <img src="https://komarev.com/ghpvc/?username=Perfecto23&amp;color=38bdae&amp;style=for-the-badge&amp;label=Profile+Views" alt="Profile Views" />
+<img src="https://img.shields.io/github/followers/Perfecto23?style=for-the-badge&amp;color=38bdae&amp;labelColor=1a1b27&amp;logo=github&amp;logoColor=38bdae" alt="Followers" /> <img src="https://img.shields.io/github/stars/Perfecto23?affiliations=OWNER&amp;style=for-the-badge&amp;color=bf91f3&amp;labelColor=1a1b27&amp;logo=github&amp;logoColor=bf91f3" alt="Stars" /> <img src="https://komarev.com/ghpvc/?username=Perfecto23&amp;color=38bdae&amp;style=for-the-badge&amp;label=Profile+Views" alt="Profile Views" />
 
 <div>
 <!-- BEGIN AUTO:PROJECTS -->
@@ -50,7 +50,7 @@
 
 ---
 
-## 📊 Github Stats
+## 📊 GitHub Stats
 
 <p><img align="top" width="49%" src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=Perfecto23&amp;show_icons=true&amp;theme=tokyonight&amp;include_all_commits=true&amp;hide_border=true" alt="GitHub Stats: stars, all-time commits, PRs, issues, contributed-to and rank ring" /> <img align="top" width="49%" src="https://github-readme-streak-stats.herokuapp.com?user=Perfecto23&amp;theme=tokyonight&amp;hide_border=true" alt="GitHub Streak: total, current and longest" /></p>
 
@@ -77,7 +77,7 @@
 
 <picture>
   <source media="(max-width: 600px)" srcset="https://trophy.ryglcloud.net/?username=Perfecto23&amp;theme=tokyonight&amp;no-frame=true&amp;column=2&amp;row=5&amp;margin-w=12&amp;margin-h=16" />
-  <img width="808" src="https://trophy.ryglcloud.net/?username=Perfecto23&amp;theme=tokyonight&amp;no-frame=true&amp;column=4&amp;row=3&amp;margin-w=12&amp;margin-h=16" alt="GitHub trophies" />
+  <img width="100%" src="https://trophy.ryglcloud.net/?username=Perfecto23&amp;theme=tokyonight&amp;no-frame=true&amp;column=5&amp;row=2&amp;margin-w=12&amp;margin-h=16" alt="GitHub trophies" />
 </picture>
 
 ## 🌱 Contributions in motion
