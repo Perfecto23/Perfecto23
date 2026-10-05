@@ -19,8 +19,8 @@ Outside the editor, you'll find me hiking or playing badminton.
 ## ✨ AI coding usage
 
 <p>
-<img width="400" src="assets/ai-usage.svg" alt="AI usage: all-time tokens, rolling 30 days and daily heatmap" />
-<img width="400" src="assets/ai-models.svg" alt="AI models: past 30 days Top 5, share of all model tokens" />
+<img align="top" width="400" src="assets/ai-usage.svg" alt="AI usage: all-time tokens, rolling 30 days and daily heatmap" />
+<img align="top" width="400" src="assets/ai-models.svg" alt="AI models: past 30 days Top 5, share of all model tokens" />
 </p>
 
 [View TokenTracker profile](https://www.tokentracker.cc/u/b6f3aece-2e2d-4764-91aa-963aa814aca0) · All-time total · Last 30 days model mix
@@ -46,8 +46,8 @@ Outside the editor, you'll find me hiking or playing badminton.
 ## 📊 Github Stats
 
 <p>
-<img width="400" src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=Perfecto23&amp;show_icons=true&amp;theme=tokyonight&amp;include_all_commits=true&amp;hide_border=true" alt="GitHub Stats: stars, all-time commits, PRs, issues, contributed-to and rank ring" />
-<img width="400" src="https://github-readme-streak-stats.herokuapp.com?user=Perfecto23&amp;theme=tokyonight&amp;hide_border=true" alt="GitHub Streak: total, current and longest" />
+<img align="top" width="400" src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=Perfecto23&amp;show_icons=true&amp;theme=tokyonight&amp;include_all_commits=true&amp;hide_border=true" alt="GitHub Stats: stars, all-time commits, PRs, issues, contributed-to and rank ring" />
+<img align="top" width="400" src="https://github-readme-streak-stats.herokuapp.com?user=Perfecto23&amp;theme=tokyonight&amp;hide_border=true" alt="GitHub Streak: total, current and longest" />
 </p>
 
 <sub>Commits use the provider’s all-time count. Contributed repositories and rank follow the provider’s scope.</sub>
@@ -55,17 +55,17 @@ Outside the editor, you'll find me hiking or playing badminton.
 ### 💻 Most Used Languages
 
 <p>
-<img width="400" src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Perfecto23&amp;layout=compact&amp;theme=tokyonight&amp;langs_count=8&amp;hide_border=true" alt="Most Used Languages — compact, eight languages" />
+<img align="top" width="400" src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Perfecto23&amp;layout=compact&amp;theme=tokyonight&amp;langs_count=8&amp;hide_border=true" alt="Most Used Languages — compact, eight languages" />
 
-<img width="400" src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Perfecto23&amp;layout=normal&amp;theme=tokyonight&amp;langs_count=8&amp;hide_border=true" alt="Most Used Languages — horizontal bars, eight languages" />
+<img align="top" width="400" src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Perfecto23&amp;layout=normal&amp;theme=tokyonight&amp;langs_count=8&amp;hide_border=true" alt="Most Used Languages — horizontal bars, eight languages" />
 </p>
 
 ### 📊 Language Distribution
 
 <p>
-<img width="400" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Repo" />
+<img align="top" width="400" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Repo" />
 
-<img width="400" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Commit" />
+<img align="top" width="400" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Commit" />
 </p>
 
 ### 📈 Activity Graph
@@ -82,7 +82,7 @@ Outside the editor, you'll find me hiking or playing badminton.
 
 ### ⏱️ Coding Time & Stats
 
-<img width="400" src="assets/productive-time.svg" alt="Productive time by commit hour UTC+8 — last valid provider snapshot" />
+<img align="top" width="400" src="assets/productive-time.svg" alt="Productive time by commit hour UTC+8 — last valid provider snapshot" />
 
 ### 🐍 Contribution Snake
 
