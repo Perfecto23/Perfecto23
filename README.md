@@ -1,8 +1,8 @@
-<img width="808" src="https://capsule-render.vercel.app/api?type=waving&amp;color=0:6d28d9,50:4f46e5,100:0891b2&amp;height=160&amp;section=header&amp;text=Perfecto&amp;fontSize=64&amp;fontColor=ffffff&amp;fontAlignY=38&amp;animation=fadeIn" alt="Perfecto — full-stack engineer" />
+<p><img width="100%" src="https://capsule-render.vercel.app/api?type=waving&amp;color=0:6d28d9,50:4f46e5,100:0891b2&amp;height=120&amp;section=header&amp;text=Perfecto&amp;fontSize=52&amp;fontColor=ffffff&amp;fontAlignY=38&amp;animation=fadeIn" alt="Perfecto — full-stack engineer" /></p>
 
 <p align="center"><img align="middle" width="112" src="assets/portrait.svg" alt="Dithered portrait from Perfecto23's public GitHub avatar" /> <img align="middle" width="435" src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&amp;pause=1000&amp;width=435&amp;lines=Welcome+to+my+GitHub+homepage&amp;center=true&amp;color=8B5CF6" alt="Welcome to my GitHub homepage — original typing animation" /></p>
 
-# Hi, I'm Perfecto 👋
+# About Me
 
 👋 Hi, I'm Perfecto, a software engineer based in Shenzhen. I build AI products, platforms, and developer tools at MoeGo, bringing a full-stack perspective to the journey from idea to production.
 
@@ -12,7 +12,7 @@
 
 🏔️ I enjoy making interesting things, digging into hard problems, and sharing what I learn. Beyond the keyboard, I'm drawn to literature, philosophy, mountains, and badminton. Let's keep learning and building.
 
-<img width="808" src="assets/tomo.svg" alt="YourTomo pixel cat reacting to Perfecto23's GitHub activity" />
+<img width="100%" src="assets/tomo.svg" alt="YourTomo pixel cat reacting to Perfecto23's GitHub activity" />
 
 [Email](mailto:kepengcheng314@gmail.com) · [GitHub](https://github.com/Perfecto23) · [TokenTracker](https://www.tokentracker.cc/u/b6f3aece-2e2d-4764-91aa-963aa814aca0)
 
@@ -28,7 +28,7 @@
 
 ## ✨ AI coding usage
 
-<p><img align="top" width="400" src="assets/ai-usage.svg" alt="AI usage: 365-day profile total, rolling 30 days and daily heatmap" /> <img align="top" width="400" src="assets/ai-models.svg" alt="AI models: past 30 days Top 5, share of all model tokens" /></p>
+<p><img align="top" width="49%" src="assets/ai-usage.svg" alt="AI usage: 365-day profile total, rolling 30 days and daily heatmap" /> <img align="top" width="49%" src="assets/ai-models.svg" alt="AI models: past 30 days Top 5, share of all model tokens" /></p>
 
 [View TokenTracker profile](https://www.tokentracker.cc/u/b6f3aece-2e2d-4764-91aa-963aa814aca0) · Public profile total (365 days) · Last 30 days model mix
 
@@ -52,7 +52,7 @@
 
 ## 📊 Github Stats
 
-<p><img align="top" width="400" src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=Perfecto23&amp;show_icons=true&amp;theme=tokyonight&amp;include_all_commits=true&amp;hide_border=true" alt="GitHub Stats: stars, all-time commits, PRs, issues, contributed-to and rank ring" /> <img align="top" width="400" src="https://github-readme-streak-stats.herokuapp.com?user=Perfecto23&amp;theme=tokyonight&amp;hide_border=true" alt="GitHub Streak: total, current and longest" /></p>
+<p><img align="top" width="49%" src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=Perfecto23&amp;show_icons=true&amp;theme=tokyonight&amp;include_all_commits=true&amp;hide_border=true" alt="GitHub Stats: stars, all-time commits, PRs, issues, contributed-to and rank ring" /> <img align="top" width="49%" src="https://github-readme-streak-stats.herokuapp.com?user=Perfecto23&amp;theme=tokyonight&amp;hide_border=true" alt="GitHub Streak: total, current and longest" /></p>
 
 Commits use the provider’s all-time count. Contributed repositories and rank follow the provider’s scope.
 
@@ -67,7 +67,7 @@ Commits use the provider’s all-time count. Contributed repositories and rank f
 
 ### 📊 Language Distribution
 
-<p><img align="top" width="400" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Repo" /> <img align="top" width="400" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Commit" /></p>
+<p><img align="top" width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Repo" /> <img align="top" width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Commit" /></p>
 
 ### 📈 Activity Graph
 
