@@ -4,11 +4,13 @@
 
 # Hi, I'm Perfecto 👋
 
-I'm a **full-stack engineer based in Shenzhen**, building AI platforms at MoeGo. I started in frontend and now work on bringing AI agents into real products.
+👋 Hi, I'm Perfecto, a software engineer based in Shenzhen. I build AI products, platforms, and developer tools at MoeGo, bringing a full-stack perspective to the journey from idea to production.
 
-I like creating interesting things with AI—and doing the engineering that makes them dependable. My focus is turning the uncertain parts of AI products into systems we can ship, test, and build on, from developer tools to everyday workflows.
+🛠️ My work spans agents that solve real business problems and the shared infrastructure behind them: runtimes, integrations, evaluation, observability, and delivery. I care about turning promising experiments into dependable systems, and recurring engineering problems into capabilities others can build on.
 
-Away from the keyboard, I enjoy literature and philosophy, hiking, and badminton. Let's keep learning and building together.
+🤖 I also help shape how teams build with AI. That means creating reusable tools, improving development and testing workflows, and working across engineering, product, and design to bring agentic workflows into everyday practice.
+
+🏔️ I enjoy making interesting things, digging into hard problems, and sharing what I learn. Beyond the keyboard, I'm drawn to literature, philosophy, mountains, and badminton. Let's keep learning and building.
 
 <img width="808" src="assets/tomo.svg" alt="YourTomo pixel cat reacting to Perfecto23's GitHub activity" />
 
