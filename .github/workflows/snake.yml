@@ -45,7 +45,7 @@ jobs:
           PET_ACCENT: '#7dcfff'
           PET_OUTPUT_DIR: ${{ runner.temp }}/tomo
         run: |
-          node .art-tools/tomo/generate.ts
+          node --experimental-transform-types .art-tools/tomo/generate.ts
           node .art-tools/bonsai/dist/src/cli.js --user Perfecto23 --out "$RUNNER_TEMP/bonsai"
           cp "$RUNNER_TEMP/tomo/pet.svg" assets/tomo.svg
           cp "$RUNNER_TEMP/bonsai/bonsai-growth.gif" assets/bonsai.gif
