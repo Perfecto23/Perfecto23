@@ -1,7 +1,7 @@
 name: Update profile art
 on:
   schedule:
-    - cron: '0 8 * * *'
+    - cron: '23 */6 * * *'
   workflow_dispatch:
   push:
     branches: [master]

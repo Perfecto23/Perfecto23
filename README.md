@@ -11,6 +11,8 @@ I'm a **full-stack engineer based in Shenzhen**, building AI agents, developer t
 
 Outside the editor, you'll find me hiking or playing badminton.
 
+<img width="808" src="assets/tomo.svg" alt="YourTomo pixel cat reacting to Perfecto23's GitHub activity" />
+
 [Email](mailto:kepengcheng314@gmail.com) · [GitHub](https://github.com/Perfecto23) · [TokenTracker](https://www.tokentracker.cc/u/b6f3aece-2e2d-4764-91aa-963aa814aca0)
 
 <img src="https://img.shields.io/github/followers/Perfecto23?style=for-the-badge&amp;color=38bdae&amp;labelColor=1a1b27&amp;logo=github&amp;logoColor=38bdae" alt="Followers" /> <img src="https://img.shields.io/github/stars/Perfecto23?affiliations=OWNER%2CCOLLABORATOR&amp;style=for-the-badge&amp;color=bf91f3&amp;labelColor=1a1b27&amp;logo=github&amp;logoColor=bf91f3" alt="Stars" /> <img src="https://komarev.com/ghpvc/?username=Perfecto23&amp;color=38bdae&amp;style=for-the-badge&amp;label=Profile+Views" alt="Profile Views" />
@@ -100,9 +102,7 @@ Outside the editor, you'll find me hiking or playing badminton.
 
 <img align="top" width="400" src="assets/productive-time.svg" alt="Productive time by commit hour UTC+8 — last valid provider snapshot" />
 
-## 🐾 Profile companions
-
-<img width="808" src="assets/tomo.svg" alt="YourTomo pixel cat reacting to Perfecto23's GitHub activity" />
+## 🌱 Contributions in motion
 
 ### 🌳 A bonsai grown from my GitHub history
 
