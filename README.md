@@ -77,13 +77,10 @@ Outside the editor, you'll find me hiking or playing badminton.
 
 ### 📊 GitHub Overview
 
-<table>
-<tr><td>
-<img width="808" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Perfecto23&amp;theme=tokyonight" alt="GitHub Profile Summary overview" />
-</td></tr>
-</table>
-
-<sub>On smaller screens, swipe horizontally to read the full overview.</sub>
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/overview-mobile.svg" />
+  <img width="808" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Perfecto23&amp;theme=tokyonight" alt="GitHub Profile Summary overview" />
+</picture>
 
 ### 🏆 Achievements
 

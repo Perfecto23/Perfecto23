@@ -234,6 +234,35 @@ def update_productive(today, captured):
     validate_productive(raw)
     publish(ROOT / 'assets/productive-time.svg', raw.decode())
 
+def mobile_overview(raw, captured):
+    root = ET.fromstring(raw)
+    ns = {'s': 'http://www.w3.org/2000/svg'}
+    group = root.find('s:g[@class="gpsc-root"]', ns)
+    if root.get('viewBox') != '0 0 700 200' or group is None:
+        raise InvalidData('unexpected Overview layout; retain previous mobile card')
+    body = group.find('s:g[@transform="translate(0,40)"]', ns)
+    graph = body.find('s:g[@transform="translate(295,10)"]', ns) if body is not None else None
+    if graph is None or not graph.findall('.//s:path', ns):
+        raise InvalidData('Overview graph missing')
+    if any(n.tag.rsplit('}', 1)[-1] in {'script', 'foreignObject'} or any(k.lower().startswith('on') for k in n.attrib) for n in root.iter()):
+        raise InvalidData('unsafe Overview SVG')
+    root.set('width', '460'); root.set('height', '390'); root.set('viewBox', '0 0 460 390')
+    group.find('s:rect', ns).set('width', '458')
+    graph.set('transform', 'translate(53,180)')
+    for node in graph.iter():
+        if node.get('font-size') == '10': node.set('font-size', '13')
+    for axis in graph.findall('.//s:g[@text-anchor="start"]', ns):
+        ticks = axis.findall('s:g[@class="tick"]', ns)
+        for tick in ticks[1::2]: axis.remove(tick)
+    note = ET.SubElement(group, '{'+ns['s']+'}text', {'x': '16', 'y': '379', 'font-size': '11', 'fill': '#a9b1d6'})
+    note.text = 'Snapshot: '+captured[:10]+' UTC'
+    ET.register_namespace('', ns['s'])
+    return ET.tostring(root, encoding='unicode')
+
+def update_overview(today, captured):
+    raw = fetch('https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username='+USER+'&theme=tokyonight')
+    publish(ROOT / 'assets/overview-mobile.svg', mobile_overview(raw, captured))
+
 def update_projects(today, captured):
     raw = fetch_projects(CONFIG)
     projects = filter_projects(raw['repositories'], CONFIG)
@@ -265,7 +294,7 @@ def main(argv=None):
         return 0
     now = dt.datetime.now(dt.timezone.utc)
     errors = []
-    for operation in (update_ai, update_projects, update_productive):
+    for operation in (update_ai, update_projects, update_productive, update_overview):
         try: operation(now.date(), now.isoformat(timespec='seconds'))
         except Exception as exc:
             errors.append(operation.__name__)
