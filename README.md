@@ -1,3 +1,10 @@
+<img width="808" src="https://capsule-render.vercel.app/api?type=waving&amp;color=0:6d28d9,50:4f46e5,100:0891b2&amp;height=160&amp;section=header&amp;text=Perfecto&amp;fontSize=64&amp;fontColor=ffffff&amp;fontAlignY=38&amp;animation=fadeIn" alt="Perfecto — full-stack engineer" />
+
+<p align="center">
+  <img align="middle" width="112" src="assets/portrait.svg" alt="Dithered portrait from Perfecto23's public GitHub avatar" />
+  <img align="middle" width="435" src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&amp;pause=1000&amp;width=435&amp;lines=Welcome+to+my+GitHub+homepage&amp;center=true&amp;color=8B5CF6" alt="Welcome to my GitHub homepage — original typing animation" />
+</p>
+
 # Hi, I'm Perfecto 👋
 
 I'm a **full-stack engineer based in Shenzhen**, building AI agents, developer tooling, and reliable workflows. I enjoy turning interesting ideas into useful software—and making the path from idea to production a little smoother.
@@ -93,9 +100,19 @@ Outside the editor, you'll find me hiking or playing badminton.
 
 <img align="top" width="400" src="assets/productive-time.svg" alt="Productive time by commit hour UTC+8 — last valid provider snapshot" />
 
+## 🐾 Profile companions
+
+<img width="808" src="assets/tomo.svg" alt="YourTomo pixel cat reacting to Perfecto23's GitHub activity" />
+
+### 🌳 A bonsai grown from my GitHub history
+
+<p align="center"><img width="294" src="assets/bonsai.gif" alt="Perfecto23's contribution bonsai growing from seed" /></p>
+
 ### 🐍 Contribution Snake
 
 <img width="808" src="assets/snake.svg" alt="Animated GitHub contribution snake" />
 
 
 ---
+
+<sub>Made with [dither-portrait](https://github.com/0xharkirat/dither-portrait), [YourTomo](https://github.com/prsdx/YourTomo), [git-bonsai](https://github.com/egorthinks/git-bonsai), and [snk](https://github.com/Platane/snk). [Artwork credits](THIRD_PARTY_NOTICES.md).</sub>
