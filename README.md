@@ -54,9 +54,9 @@
 
 <p><img align="top" width="49%" src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=Perfecto23&amp;show_icons=true&amp;theme=tokyonight&amp;include_all_commits=true&amp;hide_border=true" alt="GitHub Stats: stars, all-time commits, PRs, issues, contributed-to and rank ring" /> <img align="top" width="49%" src="https://github-readme-streak-stats.herokuapp.com?user=Perfecto23&amp;theme=tokyonight&amp;hide_border=true" alt="GitHub Streak: total, current and longest" /></p>
 
-### 💻 Most Used Languages
+### 💻 Most Used Languages · ⏱️ Coding Time & Stats
 
-<img align="top" width="400" src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Perfecto23&amp;layout=compact&amp;theme=tokyonight&amp;langs_count=8&amp;hide_border=true" alt="Most Used Languages — compact, eight languages" />
+<p><img align="top" width="49%" src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Perfecto23&amp;layout=compact&amp;theme=tokyonight&amp;langs_count=8&amp;hide_border=true" alt="Most Used Languages — compact, eight languages" /> <img align="top" width="49%" src="assets/productive-time.svg" alt="Productive time by commit hour UTC+8 — last valid provider snapshot" /></p>
 
 <details>
 <summary>Per-language bars · eight-language breakdown</summary>
@@ -84,10 +84,6 @@
   <source media="(max-width: 600px)" srcset="https://trophy.ryglcloud.net/?username=Perfecto23&amp;theme=tokyonight&amp;no-frame=true&amp;column=2&amp;row=5&amp;margin-w=12&amp;margin-h=16" />
   <img width="808" src="https://trophy.ryglcloud.net/?username=Perfecto23&amp;theme=tokyonight&amp;no-frame=true&amp;column=4&amp;row=3&amp;margin-w=12&amp;margin-h=16" alt="GitHub trophies" />
 </picture>
-
-### ⏱️ Coding Time & Stats
-
-<img align="top" width="400" src="assets/productive-time.svg" alt="Productive time by commit hour UTC+8 — last valid provider snapshot" />
 
 ## 🌱 Contributions in motion
 
