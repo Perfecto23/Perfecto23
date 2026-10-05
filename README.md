@@ -52,7 +52,7 @@
 
 ## 📊 GitHub Stats
 
-<p><img align="top" width="49%" src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=Perfecto23&amp;show_icons=true&amp;theme=tokyonight&amp;include_all_commits=true&amp;hide_border=true" alt="GitHub Stats: stars, all-time commits, PRs, issues, contributed-to and rank ring" /> <img align="top" width="49%" src="https://github-readme-streak-stats.herokuapp.com?user=Perfecto23&amp;theme=tokyonight&amp;hide_border=true" alt="GitHub Streak: total, current and longest" /></p>
+<p><img align="top" width="49%" src="https://stats.perfecto23.com/api?username=Perfecto23&amp;show_icons=true&amp;theme=tokyonight&amp;include_all_commits=true&amp;hide_border=true&amp;card_width=495" alt="GitHub Stats: stars, all-time commits, PRs, issues, contributed-to and rank ring" /> <img align="top" width="49%" src="https://stats.perfecto23.com/api/streak?username=Perfecto23&amp;theme=tokyonight&amp;hide_border=true" alt="GitHub Streak: total, current and longest" /></p>
 
 ### 💻 Most Used Languages · ⏱️ Coding Time & Stats
 
