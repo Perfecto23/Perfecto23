@@ -1,9 +1,6 @@
 <img width="808" src="https://capsule-render.vercel.app/api?type=waving&amp;color=0:6d28d9,50:4f46e5,100:0891b2&amp;height=160&amp;section=header&amp;text=Perfecto&amp;fontSize=64&amp;fontColor=ffffff&amp;fontAlignY=38&amp;animation=fadeIn" alt="Perfecto — full-stack engineer" />
 
-<p align="center">
-  <img align="middle" width="112" src="assets/portrait.svg" alt="Dithered portrait from Perfecto23's public GitHub avatar" />
-  <img align="middle" width="435" src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&amp;pause=1000&amp;width=435&amp;lines=Welcome+to+my+GitHub+homepage&amp;center=true&amp;color=8B5CF6" alt="Welcome to my GitHub homepage — original typing animation" />
-</p>
+<p align="center"><img align="middle" width="112" src="assets/portrait.svg" alt="Dithered portrait from Perfecto23's public GitHub avatar" /> <img align="middle" width="435" src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&amp;pause=1000&amp;width=435&amp;lines=Welcome+to+my+GitHub+homepage&amp;center=true&amp;color=8B5CF6" alt="Welcome to my GitHub homepage — original typing animation" /></p>
 
 # Hi, I'm Perfecto 👋
 
@@ -27,10 +24,8 @@ Outside the editor, you'll find me hiking or playing badminton.
 
 ## ✨ AI coding usage
 
-<p>
 <img align="top" width="400" src="assets/ai-usage.svg" alt="AI usage: 365-day profile total, rolling 30 days and daily heatmap" />
 <img align="top" width="400" src="assets/ai-models.svg" alt="AI models: past 30 days Top 5, share of all model tokens" />
-</p>
 
 [View TokenTracker profile](https://www.tokentracker.cc/u/b6f3aece-2e2d-4764-91aa-963aa814aca0) · Public profile total (365 days) · Last 30 days model mix
 
@@ -54,12 +49,10 @@ Outside the editor, you'll find me hiking or playing badminton.
 
 ## 📊 Github Stats
 
-<p>
 <img align="top" width="400" src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=Perfecto23&amp;show_icons=true&amp;theme=tokyonight&amp;include_all_commits=true&amp;hide_border=true" alt="GitHub Stats: stars, all-time commits, PRs, issues, contributed-to and rank ring" />
 <img align="top" width="400" src="https://github-readme-streak-stats.herokuapp.com?user=Perfecto23&amp;theme=tokyonight&amp;hide_border=true" alt="GitHub Streak: total, current and longest" />
-</p>
 
-<sub>Commits use the provider’s all-time count. Contributed repositories and rank follow the provider’s scope.</sub>
+Commits use the provider’s all-time count. Contributed repositories and rank follow the provider’s scope.
 
 ### 💻 Most Used Languages
 
@@ -74,11 +67,8 @@ Outside the editor, you'll find me hiking or playing badminton.
 
 ### 📊 Language Distribution
 
-<p>
 <img align="top" width="400" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Repo" />
-
 <img align="top" width="400" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Commit" />
-</p>
 
 ### 📈 Activity Graph
 
@@ -115,4 +105,4 @@ Outside the editor, you'll find me hiking or playing badminton.
 
 ---
 
-<sub>Made with [dither-portrait](https://github.com/0xharkirat/dither-portrait), [YourTomo](https://github.com/prsdx/YourTomo), [git-bonsai](https://github.com/egorthinks/git-bonsai), and [snk](https://github.com/Platane/snk). [Artwork credits](THIRD_PARTY_NOTICES.md).</sub>
+Made with [dither-portrait](https://github.com/0xharkirat/dither-portrait), [YourTomo](https://github.com/prsdx/YourTomo), [git-bonsai](https://github.com/egorthinks/git-bonsai), and [snk](https://github.com/Platane/snk). [Artwork credits](THIRD_PARTY_NOTICES.md).
