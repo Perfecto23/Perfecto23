@@ -117,7 +117,7 @@ def txt(x,y,value,size=14,color='#cbd5e1',weight=400):
     return f'<text x="{x}" y="{y}" font-size="{size}" fill="{color}" font-weight="{weight}">{html.escape(str(value))}</text>'
 
 def card(width,height,body,title):
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img"><title>{html.escape(title)}</title><style>text{{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif}}</style><defs><linearGradient id="g"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs><rect x="1" y="1" width="{width-2}" height="{height-2}" rx="20" fill="#101827" stroke="#334155"/>{body}</svg>'''
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img"><title>{html.escape(title)}</title><style>text{{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif}}</style><defs><linearGradient id="g"><stop stop-color="#bf91f3"/><stop offset="1" stop-color="#7dcfff"/></linearGradient></defs><rect x="1" y="1" width="{width-2}" height="{height-2}" rx="10" fill="#1a1b27" stroke="#414868"/>{body}</svg>'''
 
 def source_stamp(obj,as_of,failed=False):
     if not obj:return 'unavailable'
@@ -129,39 +129,40 @@ def source_stamp(obj,as_of,failed=False):
     except ValueError:label=stamp;old=True
     return label+(' · retained' if failed else ' · older' if old else '')
 
-def render_ai(ai,cumulative,config,as_of=None):
+def render_ai(ai,cumulative,config,as_of=None,panel="overview"):
     as_of=as_of or dt.date.fromisoformat(ai['window'][1])
     n=ai['total_tokens'];rows=ai['models'];start,end=ai['window'];partial=not bool(ai.get('days'))
-    # Narrow intrinsic width keeps labels legible when GitHub scales the image on phones.
-    b=txt(24,31,'about-perfecto.md · TokenTracker',16,'#94a3b8')
-    b+=txt(16,80,config['identity']['name'],28,'#f8fafc',700)+txt(163,79,'AI coding usage',20,'#c4b5fd')
-    for x,label,val in [(16,'Total usage',cumulative['display'] if cumulative else '—'),(172,'Last 30 days',compact(n)),(328,'Daily average',compact(n/30))]:
-        b+=txt(x,111,label,16,'#94a3b8',600)+txt(x,146,val,28,'#22d3ee' if x==328 else '#f8fafc',700)
-    b+=txt(16,173,f'{start} → {end} · UTC',16,'#94a3b8')
-    b+='<path d="M16 188H464" stroke="#334155"/>'
-    b+=txt(16,216,'Past 30 days · Top 5',20,'#e2e8f0',600)
-    for i,row in enumerate(sorted(rows,key=lambda m:(-m['tokens'],m['name']))[:5]):
-        y=247+i*51;share=row['tokens']/n
-        share_label='<0.1%' if 0<share<0.001 else f'{share:.1%}'
-        b+=txt(16,y,row['name'],18,'#cbd5e1',500)
-        b+=txt(290,y+23,compact(row['tokens']),17,'#e2e8f0',600)+txt(405,y+23,share_label,16,'#94a3b8')
-        b+=f'<rect x="16" y="{y+14}" width="252" height="7" rx="3.5" fill="#273449"/><rect x="16" y="{y+14}" width="{252*share:.2f}" height="7" rx="3.5" fill="url(#g)"/>'
-    # Public profile total is 365 days, not full-history model usage.
-    b+=txt(16,502,'All-time · Top 5',18,'#e2e8f0',600)
-    b+=txt(16,526,'Not available',18,'#c4b5fd',600)+txt(145,526,'in public data',18,'#94a3b8')
-    heat_y=564;b+=txt(16,heat_y,'Daily activity',20,'#e2e8f0',600)
-    if partial:
-        b+=txt(16,heat_y+26,'Daily detail pending import',18,'#c4b5fd');bottom=heat_y+56
+    # Two fixed-width panels wrap naturally in GitHub Markdown without device/theme variants.
+    b=txt(24,31,'Perfecto · TokenTracker',14,'#a9b1d6')
+    if panel == 'models':
+        b+=txt(16,76,'Models · last 30 days',23,'#70a5fd',700)
+        for i,row in enumerate(sorted(rows,key=lambda m:(-m['tokens'],m['name']))[:5]):
+            y=110+i*43;share=row['tokens']/n
+            share_label='<0.1%' if 0<share<0.001 else f'{share:.1%}'
+            b+=txt(16,y,row['name'],17,'#c0caf5',500)
+            b+=txt(258,y,compact(row['tokens']),16,'#7dcfff',600)+txt(338,y,share_label,14,'#a9b1d6')
+            b+=f'<rect x="16" y="{y+12}" width="368" height="6" rx="3" fill="#292e42"/><rect x="16" y="{y+12}" width="{368*share:.2f}" height="6" rx="3" fill="url(#g)"/>'
+        b+=txt(16,325,f'Top 5 of {len(rows)} models · share of all tokens',14,'#a9b1d6')
     else:
-        maximum=max(d['total_tokens'] for d in ai['days']);palette=['#1e293b','#353958','#514b80','#7c6aa6','#a78bfa','#22d3ee']
-        for i,day in enumerate(ai['days']):
-            v=day['total_tokens'];level=0 if not v else min(5,max(1,math.ceil(5*math.log1p(15*v/maximum)/math.log(16))))
-            x=16+(i%15)*30;y=heat_y+16+(i//15)*28;label=f"{day['date']}: {compact(v)} tokens"
-            b+=f'<rect x="{x}" y="{y}" width="26" height="24" rx="4" fill="{palette[level]}"><title>{html.escape(label)}</title></rect>'
-        b+=txt(16,heat_y+91,start,16,'#94a3b8')+txt(367,heat_y+91,end,16,'#94a3b8');bottom=heat_y+120
-    b+=txt(16,bottom,'Total: '+source_stamp(cumulative,as_of),14,'#94a3b8')
-    b+=txt(16,bottom+23,'30d: '+source_stamp(ai,as_of),14,'#94a3b8')
-    return card(480,bottom+39,b,'Perfecto AI usage: cumulative totals, past-30-day Top 5, all-time availability and daily heatmap')
+        b+=txt(16,68,'All-time tokens',16,'#70a5fd',600)
+        b+=txt(16,111,cumulative['display'] if cumulative else '—',40,'#c0caf5',700)
+        for x,label,val in [(16,'Last 30 days',compact(n)),(216,'Daily average',compact(n/30))]:
+            b+=txt(x,150,label,16,'#a9b1d6')+txt(x,181,val,28,'#7dcfff',700)
+        b+=txt(16,207,f'{start} → {end} · UTC',14,'#a9b1d6')
+        b+=txt(16,242,'Daily activity',18,'#70a5fd',600)
+        if partial:
+            b+=txt(16,281,'Daily detail pending import',16,'#bf91f3')
+        else:
+            maximum=max(d['total_tokens'] for d in ai['days']);palette=['#292e42','#414868','#62578f','#8b71c1','#bf91f3','#7dcfff']
+            for i,day in enumerate(ai['days']):
+                v=day['total_tokens'];level=0 if not v else min(5,max(1,math.ceil(5*math.log1p(15*v/maximum)/math.log(16))))
+                x=16+(i%15)*24.5;y=255+(i//15)*27;label=f"{day['date']}: {compact(v)} tokens"
+                b+=f'<rect x="{x}" y="{y}" width="21" height="23" rx="3" fill="{palette[level]}"><title>{html.escape(label)}</title></rect>'
+            b+=txt(16,325,start,14,'#a9b1d6')+txt(290,325,end,14,'#a9b1d6')
+    b+='<path d="M16 337H384" stroke="#414868"/>'
+    b+=txt(16,357,'Total: '+source_stamp(cumulative,as_of),12,'#a9b1d6')
+    b+=txt(16,377,'30d: '+source_stamp(ai,as_of),12,'#a9b1d6')
+    return card(400,394,b,'Perfecto AI usage: '+('past-30-day Top 5 models' if panel == 'models' else 'all-time tokens, past-30-day total, daily average and heatmap'))
 
 def publish(path, svg):
     ET.fromstring(svg)
@@ -184,26 +185,30 @@ def cumulative_embed(raw, captured):
     return {'display': compact(n), 'captured_at': captured}
 
 def update_ai(today, captured):
-    # Entire card is replaced only when both independent sources validate.
+    # Both panels are rendered only when both independent sources validate.
     profile = json.loads(fetch(TOKEN_BASE + 'tokentracker-leaderboard-profile?user_id=' + TOKEN_USER + '&period=total&tz=Etc%2FUTC'))
     daily = normalize_profile(profile, today, captured)
     cumulative = cumulative_embed(fetch(TOKEN_BASE + 'tokentracker-embed-svg?user_id=' + TOKEN_USER + '&theme=dark'), captured)
-    publish(ROOT / 'assets/ai-usage.svg', render_ai(daily, cumulative, CONFIG, today))
+    panels = [('ai-usage.svg', 'overview'), ('ai-models.svg', 'models')]
+    rendered = [(name, render_ai(daily, cumulative, CONFIG, today, panel)) for name, panel in panels]
+    for name, svg in rendered: ET.fromstring(svg)
+    for name, svg in rendered: publish(ROOT / 'assets' / name, svg)
 
 def mark_ai_retained(today, captured):
-    path = ROOT / 'assets/ai-usage.svg'
-    if not path.exists(): return
-    svg = path.read_text()
-    stamp = dt.datetime.fromisoformat(captured.replace('Z', '+00:00')).astimezone(dt.timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
-    status = html.escape('Refresh failed '+stamp)+'<tspan x="24" dy="19">saved snapshot retained</tspan>'
-    svg, changed = re.subn(r'(<text x="24" y="31"[^>]*>).*?(</text>)', lambda m: m[1]+status+m[2], svg, count=1)
-    if changed != 1: raise InvalidData('AI status label missing')
-    def retained(m):
-        value = re.sub(r' · (?:older|retained)', '', m[2])
-        old = dt.date.fromisoformat(value[:10]) < today
-        return '>'+m[1]+value+(' · older' if old else '')+' · retained<'
-    svg = re.sub(r'>(Total: |30d: )([^<]+)<', retained, svg)
-    publish(path, svg)
+    for name in ('ai-usage.svg', 'ai-models.svg'):
+        path = ROOT / 'assets' / name
+        if not path.exists(): continue
+        svg = path.read_text()
+        stamp = dt.datetime.fromisoformat(captured.replace('Z', '+00:00')).astimezone(dt.timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
+        status = html.escape('Refresh failed '+stamp)+'<tspan x="24" dy="19">saved snapshot retained</tspan>'
+        svg, changed = re.subn(r'(<text x="24" y="31"[^>]*>).*?(</text>)', lambda m: m[1]+status+m[2], svg, count=1)
+        if changed != 1: raise InvalidData('AI status label missing')
+        def retained(m):
+            value = re.sub(r' · (?:older|retained)', '', m[2])
+            old = dt.date.fromisoformat(value[:10]) < today
+            return '>'+m[1]+value+(' · older' if old else '')+' · retained<'
+        svg = re.sub(r'>(Total: |30d: )([^<]+)<', retained, svg)
+        publish(path, svg)
 
 def validate_productive(raw):
     root = ET.fromstring(raw)
