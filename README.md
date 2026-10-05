@@ -54,8 +54,6 @@
 
 <p><img align="top" width="49%" src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=Perfecto23&amp;show_icons=true&amp;theme=tokyonight&amp;include_all_commits=true&amp;hide_border=true" alt="GitHub Stats: stars, all-time commits, PRs, issues, contributed-to and rank ring" /> <img align="top" width="49%" src="https://github-readme-streak-stats.herokuapp.com?user=Perfecto23&amp;theme=tokyonight&amp;hide_border=true" alt="GitHub Streak: total, current and longest" /></p>
 
-Commits use the provider’s all-time count. Contributed repositories and rank follow the provider’s scope.
-
 ### 💻 Most Used Languages
 
 <img align="top" width="400" src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Perfecto23&amp;layout=compact&amp;theme=tokyonight&amp;langs_count=8&amp;hide_border=true" alt="Most Used Languages — compact, eight languages" />
@@ -77,7 +75,7 @@ Commits use the provider’s all-time count. Contributed repositories and rank f
 
 <picture>
   <source media="(max-width: 600px)" srcset="assets/overview-mobile.svg" />
-  <img width="808" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Perfecto23&amp;theme=tokyonight" alt="GitHub Profile Summary overview" />
+  <img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Perfecto23&amp;theme=tokyonight" alt="GitHub Profile Summary overview" />
 </picture>
 
 ### 🏆 Achievements
@@ -99,7 +97,7 @@ Commits use the provider’s all-time count. Contributed repositories and rank f
 
 ### 🐍 Contribution Snake
 
-<img width="808" src="assets/snake.svg" alt="Animated GitHub contribution snake" />
+<img width="100%" src="assets/snake.svg" alt="Animated GitHub contribution snake" />
 
 
 ---
