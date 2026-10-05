@@ -64,7 +64,7 @@
 
 ### 📈 Activity Graph
 
-<p><img src="https://ghchart.rshah.org/6d28d9/Perfecto23" alt="GitHub contribution calendar" /></p>
+<p><img width="100%" src="https://ghchart.rshah.org/6d28d9/Perfecto23" alt="GitHub contribution calendar" /></p>
 
 ### 📊 GitHub Overview
 
