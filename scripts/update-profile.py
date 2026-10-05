@@ -132,37 +132,36 @@ def source_stamp(obj,as_of,failed=False):
 def render_ai(ai,cumulative,config,as_of=None):
     as_of=as_of or dt.date.fromisoformat(ai['window'][1])
     n=ai['total_tokens'];rows=ai['models'];start,end=ai['window'];partial=not bool(ai.get('days'))
-    b=txt(24,31,'about-perfecto.md',12,'#94a3b8')+txt(758,31,'TokenTracker · UTC',12,'#94a3b8')
-    b+=txt(24,65,config['identity']['name'],24,'#f8fafc',700)+txt(151,64,'AI coding usage',15,'#c4b5fd')
-    for x,label,val in [(24,'TOTAL USAGE',cumulative['display'] if cumulative else '—'),(342,'LAST 30 DAYS',compact(n)),(660,'DAILY AVERAGE',compact(n/30))]:
-        b+=txt(x,98,label,10,'#94a3b8',600)+txt(x,136,val,30,'#22d3ee' if x==660 else '#f8fafc',700)
-    b+=txt(24,161,f'{start} → {end} · inclusive UTC window',11,'#94a3b8')
-    b+='<path d="M24 177H936" stroke="#334155"/>'
-    b+=txt(24,201,'Past 30 days · Top 5',16,'#e2e8f0',600)+txt(492,201,'All-time · Top 5',16,'#e2e8f0',600)
-    def ranking(x,models,total):
-        result=''
-        for i,row in enumerate(sorted(models,key=lambda m:(-m['tokens'],m['name']))[:5]):
-            y=228+i*33;share=row['tokens']/total
-            share_label='<0.1%' if 0<share<0.001 else f'{share:.1%}'
-            result+=txt(x,y,row['name'],12,'#cbd5e1',500)+txt(x+305,y,compact(row['tokens']),12,'#e2e8f0',600)+txt(x+391,y,share_label,11,'#94a3b8')
-            result+=f'<rect x="{x}" y="{y+8}" width="440" height="3" rx="1.5" fill="#273449"/><rect x="{x}" y="{y+8}" width="{440*share:.2f}" height="3" rx="1.5" fill="url(#g)"/>'
-        return result
-    b+=ranking(24,rows,n)
+    # Narrow intrinsic width keeps labels legible when GitHub scales the image on phones.
+    b=txt(24,31,'about-perfecto.md · TokenTracker',16,'#94a3b8')
+    b+=txt(16,80,config['identity']['name'],28,'#f8fafc',700)+txt(163,79,'AI coding usage',20,'#c4b5fd')
+    for x,label,val in [(16,'Total usage',cumulative['display'] if cumulative else '—'),(172,'Last 30 days',compact(n)),(328,'Daily average',compact(n/30))]:
+        b+=txt(x,111,label,16,'#94a3b8',600)+txt(x,146,val,28,'#22d3ee' if x==328 else '#f8fafc',700)
+    b+=txt(16,173,f'{start} → {end} · UTC',16,'#94a3b8')
+    b+='<path d="M16 188H464" stroke="#334155"/>'
+    b+=txt(16,216,'Past 30 days · Top 5',20,'#e2e8f0',600)
+    for i,row in enumerate(sorted(rows,key=lambda m:(-m['tokens'],m['name']))[:5]):
+        y=247+i*51;share=row['tokens']/n
+        share_label='<0.1%' if 0<share<0.001 else f'{share:.1%}'
+        b+=txt(16,y,row['name'],18,'#cbd5e1',500)
+        b+=txt(290,y+23,compact(row['tokens']),17,'#e2e8f0',600)+txt(405,y+23,share_label,16,'#94a3b8')
+        b+=f'<rect x="16" y="{y+14}" width="252" height="7" rx="3.5" fill="#273449"/><rect x="16" y="{y+14}" width="{252*share:.2f}" height="7" rx="3.5" fill="url(#g)"/>'
     # Public profile total is 365 days, not full-history model usage.
-    b+=txt(492,258,'Not available',22,'#c4b5fd',600)+txt(492,287,'in public data',12,'#94a3b8')
-    heat_y=405;b+=txt(24,heat_y,'Daily activity',16,'#e2e8f0',600)
+    b+=txt(16,502,'All-time · Top 5',18,'#e2e8f0',600)
+    b+=txt(16,526,'Not available',18,'#c4b5fd',600)+txt(145,526,'in public data',18,'#94a3b8')
+    heat_y=564;b+=txt(16,heat_y,'Daily activity',20,'#e2e8f0',600)
     if partial:
-        b+=txt(24,heat_y+26,'Daily detail pending import',12,'#c4b5fd');bottom=heat_y+50
+        b+=txt(16,heat_y+26,'Daily detail pending import',18,'#c4b5fd');bottom=heat_y+56
     else:
         maximum=max(d['total_tokens'] for d in ai['days']);palette=['#1e293b','#353958','#514b80','#7c6aa6','#a78bfa','#22d3ee']
         for i,day in enumerate(ai['days']):
             v=day['total_tokens'];level=0 if not v else min(5,max(1,math.ceil(5*math.log1p(15*v/maximum)/math.log(16))))
-            x=24+i*30.5;label=f"{day['date']}: {compact(v)} tokens"
-            b+=f'<rect x="{x}" y="{heat_y+17}" width="25" height="22" rx="4" fill="{palette[level]}"><title>{html.escape(label)}</title></rect>'
-        b+=txt(24,heat_y+57,start,10,'#94a3b8')+txt(856,heat_y+57,end,10,'#94a3b8');bottom=heat_y+82
-    b+=txt(24,bottom,'Total: '+source_stamp(cumulative,as_of),10,'#64748b')
-    b+=txt(492,bottom,'30d: '+source_stamp(ai,as_of),10,'#64748b')
-    return card(960,bottom+20,b,'Perfecto AI usage: cumulative totals, past-30-day Top 5, all-time availability and daily heatmap')
+            x=16+(i%15)*30;y=heat_y+16+(i//15)*28;label=f"{day['date']}: {compact(v)} tokens"
+            b+=f'<rect x="{x}" y="{y}" width="26" height="24" rx="4" fill="{palette[level]}"><title>{html.escape(label)}</title></rect>'
+        b+=txt(16,heat_y+91,start,16,'#94a3b8')+txt(367,heat_y+91,end,16,'#94a3b8');bottom=heat_y+120
+    b+=txt(16,bottom,'Total: '+source_stamp(cumulative,as_of),14,'#94a3b8')
+    b+=txt(16,bottom+23,'30d: '+source_stamp(ai,as_of),14,'#94a3b8')
+    return card(480,bottom+39,b,'Perfecto AI usage: cumulative totals, past-30-day Top 5, all-time availability and daily heatmap')
 
 def publish(path, svg):
     ET.fromstring(svg)
@@ -196,8 +195,8 @@ def mark_ai_retained(today, captured):
     if not path.exists(): return
     svg = path.read_text()
     stamp = dt.datetime.fromisoformat(captured.replace('Z', '+00:00')).astimezone(dt.timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
-    status = 'Refresh failed '+stamp+' · saved snapshot retained'
-    svg, changed = re.subn(r'(<text x="24" y="31"[^>]*>).*?(</text>)', lambda m: m[1]+html.escape(status)+m[2], svg, count=1)
+    status = html.escape('Refresh failed '+stamp)+'<tspan x="24" dy="19">saved snapshot retained</tspan>'
+    svg, changed = re.subn(r'(<text x="24" y="31"[^>]*>).*?(</text>)', lambda m: m[1]+status+m[2], svg, count=1)
     if changed != 1: raise InvalidData('AI status label missing')
     def retained(m):
         value = re.sub(r' · (?:older|retained)', '', m[2])
