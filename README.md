@@ -54,11 +54,14 @@ Outside the editor, you'll find me hiking or playing badminton.
 
 ### 💻 Most Used Languages
 
-<p>
 <img align="top" width="400" src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Perfecto23&amp;layout=compact&amp;theme=tokyonight&amp;langs_count=8&amp;hide_border=true" alt="Most Used Languages — compact, eight languages" />
 
+<details>
+<summary>Per-language bars · eight-language breakdown</summary>
+
 <img align="top" width="400" src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Perfecto23&amp;layout=normal&amp;theme=tokyonight&amp;langs_count=8&amp;hide_border=true" alt="Most Used Languages — horizontal bars, eight languages" />
-</p>
+
+</details>
 
 ### 📊 Language Distribution
 
@@ -74,11 +77,20 @@ Outside the editor, you'll find me hiking or playing badminton.
 
 ### 📊 GitHub Overview
 
+<table>
+<tr><td>
 <img width="808" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Perfecto23&amp;theme=tokyonight" alt="GitHub Profile Summary overview" />
+</td></tr>
+</table>
+
+<sub>On smaller screens, swipe horizontally to read the full overview.</sub>
 
 ### 🏆 Achievements
 
-<img width="808" src="https://trophy.ryglcloud.net/?username=Perfecto23&amp;theme=tokyonight&amp;no-frame=true&amp;column=4" alt="GitHub trophies" />
+<picture>
+  <source media="(max-width: 600px)" srcset="https://trophy.ryglcloud.net/?username=Perfecto23&amp;theme=tokyonight&amp;no-frame=true&amp;column=2&amp;row=5&amp;margin-w=12&amp;margin-h=16" />
+  <img width="808" src="https://trophy.ryglcloud.net/?username=Perfecto23&amp;theme=tokyonight&amp;no-frame=true&amp;column=4&amp;row=3&amp;margin-w=12&amp;margin-h=16" alt="GitHub trophies" />
+</picture>
 
 ### ⏱️ Coding Time & Stats
 
@@ -86,7 +98,7 @@ Outside the editor, you'll find me hiking or playing badminton.
 
 ### 🐍 Contribution Snake
 
-<img width="808" src="https://raw.githubusercontent.com/Perfecto23/Perfecto23/output/github-contribution-grid-snake.svg" alt="Animated GitHub contribution snake" />
+<img width="808" src="assets/snake.svg" alt="Animated GitHub contribution snake" />
 
 
 ---
