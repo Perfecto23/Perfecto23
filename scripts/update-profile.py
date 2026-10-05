@@ -129,7 +129,7 @@ def source_stamp(obj,as_of,failed=False):
     except ValueError:label=stamp;old=True
     return label+(' · retained' if failed else ' · older' if old else '')
 
-def render_ai(ai,cumulative,config,as_of=None,panel="overview"):
+def render_ai(ai,profile_summary,config,as_of=None,panel="overview"):
     as_of=as_of or dt.date.fromisoformat(ai['window'][1])
     n=ai['total_tokens'];rows=ai['models'];start,end=ai['window'];partial=not bool(ai.get('days'))
     # Two fixed-width panels wrap naturally in GitHub Markdown without device/theme variants.
@@ -144,8 +144,8 @@ def render_ai(ai,cumulative,config,as_of=None,panel="overview"):
             b+=f'<rect x="16" y="{y+12}" width="368" height="6" rx="3" fill="#292e42"/><rect x="16" y="{y+12}" width="{368*share:.2f}" height="6" rx="3" fill="url(#g)"/>'
         b+=txt(16,325,f'Top 5 of {len(rows)} models · share of all tokens',14,'#a9b1d6')
     else:
-        b+=txt(16,68,'All-time tokens',16,'#70a5fd',600)
-        b+=txt(16,111,cumulative['display'] if cumulative else '—',40,'#c0caf5',700)
+        b+=txt(16,68,'Profile total · 365 days',16,'#70a5fd',600)
+        b+=txt(16,111,profile_summary['display'] if profile_summary else '—',40,'#c0caf5',700)
         for x,label,val in [(16,'Last 30 days',compact(n)),(216,'Daily average',compact(n/30))]:
             b+=txt(x,150,label,16,'#a9b1d6')+txt(x,181,val,28,'#7dcfff',700)
         b+=txt(16,207,f'{start} → {end} · UTC',14,'#a9b1d6')
@@ -160,9 +160,9 @@ def render_ai(ai,cumulative,config,as_of=None,panel="overview"):
                 b+=f'<rect x="{x}" y="{y}" width="21" height="23" rx="3" fill="{palette[level]}"><title>{html.escape(label)}</title></rect>'
             b+=txt(16,325,start,14,'#a9b1d6')+txt(290,325,end,14,'#a9b1d6')
     b+='<path d="M16 337H384" stroke="#414868"/>'
-    b+=txt(16,357,'Total: '+source_stamp(cumulative,as_of),12,'#a9b1d6')
+    b+=txt(16,357,'Total: '+source_stamp(profile_summary,as_of),12,'#a9b1d6')
     b+=txt(16,377,'30d: '+source_stamp(ai,as_of),12,'#a9b1d6')
-    return card(400,394,b,'Perfecto AI usage: '+('past-30-day Top 5 models' if panel == 'models' else 'all-time tokens, past-30-day total, daily average and heatmap'))
+    return card(400,394,b,'Perfecto AI usage: '+('past-30-day Top 5 models' if panel == 'models' else '365-day profile total, past-30-day total, daily average and heatmap'))
 
 def publish(path, svg):
     ET.fromstring(svg)
@@ -173,24 +173,29 @@ def publish(path, svg):
     temporary.write_text(svg)
     temporary.replace(path)
 
-def cumulative_embed(raw, captured):
-    root = ET.fromstring(raw)
-    texts = [''.join(n.itertext()).strip() for n in root.iter() if n.tag.endswith('text')]
-    try: value = texts[texts.index('TOKENS') + 1]
-    except (ValueError, IndexError): raise InvalidData('official cumulative token headline missing')
-    m = re.fullmatch(r'([\d,.]+)([KMBT]?)', value)
-    if not m: raise InvalidData('invalid cumulative tokens')
-    n = D(m[1].replace(',', '')) * {'': 1, 'K': 1000, 'M': 10**6, 'B': 10**9, 'T': 10**12}[m[2]]
-    if n <= 0: raise InvalidData('empty cumulative data')
-    return {'display': compact(n), 'captured_at': captured}
+def profile_total(profile, captured):
+    if 'heatmap' not in profile and isinstance(profile.get('data'), dict): profile = profile['data']
+    period = profile['period']
+    start, end = (dt.date.fromisoformat(period[k]) for k in ('from', 'to'))
+    if period['kind'] != 'total' or (end-start).days != 364:
+        raise InvalidData('public profile total must cover 365 inclusive days')
+    rows = profile['heatmap']
+    expected = [(start+dt.timedelta(days=i)).isoformat() for i in range(365)]
+    if sorted(row['date'] for row in rows) != expected:
+        raise InvalidData('public profile total requires a complete daily window')
+    total = count(profile['totals']['total_tokens'])
+    if not total or sum(count(row['total_tokens']) for row in rows) != total:
+        raise InvalidData('public profile headline does not reconcile with daily usage')
+    return {'display': compact(total, 1), 'captured_at': captured,
+            'window': [start.isoformat(), end.isoformat()], 'total_tokens': total}
 
 def update_ai(today, captured):
-    # Both panels are rendered only when both independent sources validate.
+    # Headline, 30-day models and heatmap come from the same public profile response.
     profile = json.loads(fetch(TOKEN_BASE + 'tokentracker-leaderboard-profile?user_id=' + TOKEN_USER + '&period=total&tz=Etc%2FUTC'))
     daily = normalize_profile(profile, today, captured)
-    cumulative = cumulative_embed(fetch(TOKEN_BASE + 'tokentracker-embed-svg?user_id=' + TOKEN_USER + '&theme=dark'), captured)
+    profile_summary = profile_total(profile, captured)
     panels = [('ai-usage.svg', 'overview'), ('ai-models.svg', 'models')]
-    rendered = [(name, render_ai(daily, cumulative, CONFIG, today, panel)) for name, panel in panels]
+    rendered = [(name, render_ai(daily, profile_summary, CONFIG, today, panel)) for name, panel in panels]
     for name, svg in rendered: ET.fromstring(svg)
     for name, svg in rendered: publish(ROOT / 'assets' / name, svg)
 

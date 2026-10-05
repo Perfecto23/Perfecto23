@@ -19,11 +19,11 @@ Outside the editor, you'll find me hiking or playing badminton.
 ## ✨ AI coding usage
 
 <p>
-<img align="top" width="400" src="assets/ai-usage.svg" alt="AI usage: all-time tokens, rolling 30 days and daily heatmap" />
+<img align="top" width="400" src="assets/ai-usage.svg" alt="AI usage: 365-day profile total, rolling 30 days and daily heatmap" />
 <img align="top" width="400" src="assets/ai-models.svg" alt="AI models: past 30 days Top 5, share of all model tokens" />
 </p>
 
-[View TokenTracker profile](https://www.tokentracker.cc/u/b6f3aece-2e2d-4764-91aa-963aa814aca0) · All-time total · Last 30 days model mix
+[View TokenTracker profile](https://www.tokentracker.cc/u/b6f3aece-2e2d-4764-91aa-963aa814aca0) · Public profile total (365 days) · Last 30 days model mix
 
 ---
 
@@ -70,7 +70,7 @@ Outside the editor, you'll find me hiking or playing badminton.
 
 ### 📈 Activity Graph
 
-<p><img src="https://ghchart.rshah.org/bf91f3/Perfecto23" alt="GitHub contribution calendar" /></p>
+<p><img src="https://ghchart.rshah.org/6d28d9/Perfecto23" alt="GitHub contribution calendar" /></p>
 
 ### 📊 GitHub Overview
 
