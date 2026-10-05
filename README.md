@@ -60,9 +60,7 @@ Commits use the provider’s all-time count. Contributed repositories and rank f
 
 <details>
 <summary>Per-language bars · eight-language breakdown</summary>
-
 <img align="top" width="400" src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Perfecto23&amp;layout=normal&amp;theme=tokyonight&amp;langs_count=8&amp;hide_border=true" alt="Most Used Languages — horizontal bars, eight languages" />
-
 </details>
 
 ### 📊 Language Distribution
