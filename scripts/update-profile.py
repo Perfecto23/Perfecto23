@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Update the custom AI card and project names; provider-hosted images need no CI.
+"""Update AI, the Productive Time fallback and project names; other cards stay remote.
 Run --check for offline validation. Network failures preserve existing files.
 Raw TokenTracker/GitHub responses are processed in memory and never saved.
 """
@@ -191,6 +191,40 @@ def update_ai(today, captured):
     cumulative = cumulative_embed(fetch(TOKEN_BASE + 'tokentracker-embed-svg?user_id=' + TOKEN_USER + '&theme=dark'), captured)
     publish(ROOT / 'assets/ai-usage.svg', render_ai(daily, cumulative, CONFIG, today))
 
+def mark_ai_retained(today, captured):
+    path = ROOT / 'assets/ai-usage.svg'
+    if not path.exists(): return
+    svg = path.read_text()
+    stamp = dt.datetime.fromisoformat(captured.replace('Z', '+00:00')).astimezone(dt.timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
+    status = 'Refresh failed '+stamp+' · saved snapshot retained'
+    svg, changed = re.subn(r'(<text x="24" y="31"[^>]*>).*?(</text>)', lambda m: m[1]+html.escape(status)+m[2], svg, count=1)
+    if changed != 1: raise InvalidData('AI status label missing')
+    def retained(m):
+        value = re.sub(r' · (?:older|retained)', '', m[2])
+        old = dt.date.fromisoformat(value[:10]) < today
+        return '>'+m[1]+value+(' · older' if old else '')+' · retained<'
+    svg = re.sub(r'>(Total: |30d: )([^<]+)<', retained, svg)
+    publish(path, svg)
+
+def validate_productive(raw):
+    root = ET.fromstring(raw)
+    texts = ' '.join(''.join(n.itertext()) for n in root.iter() if n.tag.endswith('text'))
+    bars = [n for n in root.iter() if n.tag.endswith('rect') and n.get('class') == 'bar']
+    if not root.tag.endswith('svg') or re.search(r'ERROR|rate.?limit|unavailable|try again', texts, re.I):
+        raise InvalidData('Productive Time provider returned an error card')
+    if 'Commits (UTC +8.00)' not in texts or 'per day hour' not in texts or len(bars) != 24:
+        raise InvalidData('Productive Time must contain the UTC+8 24-hour chart')
+    if any(not math.isfinite(float(b.get('height', 'nan'))) or float(b.get('height', '-1')) < 0 for b in bars):
+        raise InvalidData('invalid Productive Time bar values')
+    for node in root.iter():
+        if node.tag.rsplit('}', 1)[-1] in {'script', 'foreignObject'} or any(k.lower().startswith('on') for k in node.attrib):
+            raise InvalidData('unsafe SVG content')
+
+def update_productive(today, captured):
+    raw = fetch('https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username='+USER+'&theme=tokyonight&utcOffset=8')
+    validate_productive(raw)
+    publish(ROOT / 'assets/productive-time.svg', raw.decode())
+
 def update_projects(today, captured):
     raw = fetch_projects(CONFIG)
     projects = filter_projects(raw['repositories'], CONFIG)
@@ -210,6 +244,7 @@ def check():
     for path in re.findall(r'src="(assets/[^"\s]+)"', readme):
         assert (ROOT / path).is_file(), path
     for path in (ROOT / 'assets').glob('*.svg'): ET.parse(path)
+    validate_productive((ROOT / 'assets/productive-time.svg').read_bytes())
     print('README and custom SVG resources valid')
 
 def main(argv=None):
@@ -221,10 +256,11 @@ def main(argv=None):
         return 0
     now = dt.datetime.now(dt.timezone.utc)
     errors = []
-    for operation in (update_ai, update_projects):
+    for operation in (update_ai, update_projects, update_productive):
         try: operation(now.date(), now.isoformat(timespec='seconds'))
         except Exception as exc:
             errors.append(operation.__name__)
+            if operation is update_ai: mark_ai_retained(now.date(), now.isoformat(timespec='seconds'))
             print(f'{operation.__name__}: retained previous output ({type(exc).__name__}: {exc})', file=sys.stderr)
     check()
     return int(bool(errors))

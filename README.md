@@ -61,7 +61,7 @@ Outside the editor, you'll find me hiking or playing badminton.
 
 <details>
 <summary>Original language donut</summary>
-<p><img src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Perfecto23&amp;layout=donut&amp;theme=tokyonight&amp;langs_count=6&amp;hide_border=true" alt="Most Used Languages — six-language donut" /></p>
+<p><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Perfecto23&amp;layout=donut&amp;theme=tokyonight&amp;langs_count=6&amp;hide_border=true" alt="Most Used Languages — six-language donut" /></p>
 </details>
 
 ### 📊 Language Distribution
@@ -84,7 +84,7 @@ Outside the editor, you'll find me hiking or playing badminton.
 
 ### ⏱️ Coding Time & Stats
 
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Perfecto23&amp;theme=tokyonight&amp;utcOffset=8" alt="Productive time by commit hour UTC+8" />
+<img src="assets/productive-time.svg" alt="Productive time by commit hour UTC+8 — last valid provider snapshot" />
 
 ### 🐍 Contribution Snake
 
