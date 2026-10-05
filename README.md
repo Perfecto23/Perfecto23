@@ -58,11 +58,6 @@
 
 <p><img align="top" width="49%" src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Perfecto23&amp;layout=compact&amp;theme=tokyonight&amp;langs_count=8&amp;hide_border=true" alt="Most Used Languages — compact, eight languages" /> <img align="top" width="49%" src="assets/productive-time.svg" alt="Productive time by commit hour UTC+8 — last valid provider snapshot" /></p>
 
-<details>
-<summary>Per-language bars · eight-language breakdown</summary>
-<img align="top" width="400" src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Perfecto23&amp;layout=normal&amp;theme=tokyonight&amp;langs_count=8&amp;hide_border=true" alt="Most Used Languages — horizontal bars, eight languages" />
-</details>
-
 ### 📊 Language Distribution
 
 <p><img align="top" width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Repo" /> <img align="top" width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Commit" /></p>
