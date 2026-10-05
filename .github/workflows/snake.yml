@@ -1,26 +1,54 @@
-name: Generate contribution snake
+name: Update profile art
 on:
   schedule:
     - cron: '0 8 * * *'
   workflow_dispatch:
   push:
     branches: [master]
+  pull_request:
+    branches: [master]
 permissions:
   contents: read
 concurrency:
-  group: contribution-snake
+  group: profile-art-${{ github.ref }}
   cancel-in-progress: false
 jobs:
-  generate:
-    if: github.repository == 'Perfecto23/Perfecto23' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
-    permissions:
-      contents: write
+  render:
+    if: github.repository == 'Perfecto23/Perfecto23'
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
-          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: prsdx/YourTomo
+          ref: ab9e0d39e058ea8abf9a1475f82e91b04994100d
+          path: .art-tools/tomo
+          persist-credentials: false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: egorthinks/git-bonsai
+          ref: bec04c39f62731fdb28c3b82322ef21cbf3bdfac
+          path: .art-tools/bonsai
+          persist-credentials: false
+      - name: Render cat and bonsai from public GitHub activity
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          PET_USER: Perfecto23
+          PET_NAME: Perfecto
+          PET_TZ_OFFSET_MINUTES: '480'
+          PET_ACCENT: '#7dcfff'
+          PET_OUTPUT_DIR: ${{ runner.temp }}/tomo
+        run: |
+          node .art-tools/tomo/generate.ts
+          node .art-tools/bonsai/dist/src/cli.js --user Perfecto23 --out "$RUNNER_TEMP/bonsai"
+          cp "$RUNNER_TEMP/tomo/pet.svg" assets/tomo.svg
+          cp "$RUNNER_TEMP/bonsai/bonsai-growth.gif" assets/bonsai.gif
       - uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
@@ -42,12 +70,35 @@ jobs:
           ET.fromstring(svg)
           path.write_text(svg)
           PYCODE
-      - name: Commit animation
+      - run: python3 scripts/update-profile.py --check
+      - uses: actions/upload-artifact@v4
+        with:
+          name: profile-art
+          path: |
+            assets/tomo.svg
+            assets/bonsai.gif
+            assets/snake.svg
+          retention-days: 7
+  publish:
+    if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    needs: render
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: profile-art
+          path: assets
+      - name: Commit generated art
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- assets/snake.svg
+          git add -- assets/snake.svg assets/tomo.svg assets/bonsai.gif
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m 'Update contribution snake [skip ci]'
+          git commit -m 'Update profile art [skip ci]'
           git pull --rebase
           git push
