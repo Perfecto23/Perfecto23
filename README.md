@@ -24,8 +24,7 @@ Outside the editor, you'll find me hiking or playing badminton.
 
 ## ✨ AI coding usage
 
-<img align="top" width="400" src="assets/ai-usage.svg" alt="AI usage: 365-day profile total, rolling 30 days and daily heatmap" />
-<img align="top" width="400" src="assets/ai-models.svg" alt="AI models: past 30 days Top 5, share of all model tokens" />
+<p><img align="top" width="400" src="assets/ai-usage.svg" alt="AI usage: 365-day profile total, rolling 30 days and daily heatmap" /> <img align="top" width="400" src="assets/ai-models.svg" alt="AI models: past 30 days Top 5, share of all model tokens" /></p>
 
 [View TokenTracker profile](https://www.tokentracker.cc/u/b6f3aece-2e2d-4764-91aa-963aa814aca0) · Public profile total (365 days) · Last 30 days model mix
 
@@ -49,8 +48,7 @@ Outside the editor, you'll find me hiking or playing badminton.
 
 ## 📊 Github Stats
 
-<img align="top" width="400" src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=Perfecto23&amp;show_icons=true&amp;theme=tokyonight&amp;include_all_commits=true&amp;hide_border=true" alt="GitHub Stats: stars, all-time commits, PRs, issues, contributed-to and rank ring" />
-<img align="top" width="400" src="https://github-readme-streak-stats.herokuapp.com?user=Perfecto23&amp;theme=tokyonight&amp;hide_border=true" alt="GitHub Streak: total, current and longest" />
+<p><img align="top" width="400" src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=Perfecto23&amp;show_icons=true&amp;theme=tokyonight&amp;include_all_commits=true&amp;hide_border=true" alt="GitHub Stats: stars, all-time commits, PRs, issues, contributed-to and rank ring" /> <img align="top" width="400" src="https://github-readme-streak-stats.herokuapp.com?user=Perfecto23&amp;theme=tokyonight&amp;hide_border=true" alt="GitHub Streak: total, current and longest" /></p>
 
 Commits use the provider’s all-time count. Contributed repositories and rank follow the provider’s scope.
 
@@ -65,8 +63,7 @@ Commits use the provider’s all-time count. Contributed repositories and rank f
 
 ### 📊 Language Distribution
 
-<img align="top" width="400" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Repo" />
-<img align="top" width="400" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Commit" />
+<p><img align="top" width="400" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Repo" /> <img align="top" width="400" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Commit" /></p>
 
 ### 📈 Activity Graph
 
