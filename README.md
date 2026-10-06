@@ -52,11 +52,11 @@
 
 ## 📊 GitHub Stats
 
-<p><img align="top" width="49%" src="https://stats.perfecto23.com/api?username=Perfecto23&amp;show_icons=true&amp;theme=tokyonight&amp;include_all_commits=true&amp;hide_border=true&amp;card_width=495" alt="GitHub Stats: stars, all-time commits, PRs, issues, contributed-to and rank ring" /> <img align="top" width="49%" src="https://stats.perfecto23.com/api/streak?username=Perfecto23&amp;theme=tokyonight&amp;hide_border=true" alt="GitHub Streak: total, current and longest" /></p>
+<p><img align="top" width="49%" src="https://github-stats.perfecto23.com/api?username=Perfecto23&amp;show_icons=true&amp;theme=tokyonight&amp;include_all_commits=true&amp;hide_border=true&amp;card_width=495" alt="GitHub Stats: stars, all-time commits, PRs, issues, contributed-to and rank ring" /> <img align="top" width="49%" src="https://github-stats.perfecto23.com/api/streak?username=Perfecto23&amp;theme=tokyonight&amp;hide_border=true" alt="GitHub Streak: total, current and longest" /></p>
 
 ### 💻 Most Used Languages · ⏱️ Coding Time & Stats
 
-<p><img align="top" width="49%" src="https://stats.perfecto23.com/api/top-langs?username=Perfecto23&amp;layout=compact&amp;card_width=323&amp;theme=tokyonight&amp;langs_count=8&amp;hide_border=true" alt="Most Used Languages — compact, eight languages" /> <img align="top" width="49%" src="assets/productive-time.svg" alt="Productive time by commit hour UTC+8 — last valid provider snapshot" /></p>
+<p><img align="top" width="49%" src="https://github-stats.perfecto23.com/api/top-langs?username=Perfecto23&amp;layout=compact&amp;card_width=323&amp;theme=tokyonight&amp;langs_count=8&amp;hide_border=true" alt="Most Used Languages — compact, eight languages" /> <img align="top" width="49%" src="assets/productive-time.svg" alt="Productive time by commit hour UTC+8 — last valid provider snapshot" /></p>
 
 ### 📊 Language Distribution
 
