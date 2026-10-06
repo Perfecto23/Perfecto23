@@ -56,7 +56,7 @@
 
 ### 💻 Most Used Languages · ⏱️ Coding Time & Stats
 
-<p><img align="top" width="49%" src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=Perfecto23&amp;layout=compact&amp;card_width=273&amp;theme=tokyonight&amp;langs_count=8&amp;hide_border=true" alt="Most Used Languages — compact, eight languages" /> <img align="top" width="49%" src="assets/productive-time.svg" alt="Productive time by commit hour UTC+8 — last valid provider snapshot" /></p>
+<p><img align="top" width="49%" src="https://stats.perfecto23.com/api/top-langs?username=Perfecto23&amp;layout=compact&amp;card_width=323&amp;theme=tokyonight&amp;langs_count=8&amp;hide_border=true" alt="Most Used Languages — compact, eight languages" /> <img align="top" width="49%" src="assets/productive-time.svg" alt="Productive time by commit hour UTC+8 — last valid provider snapshot" /></p>
 
 ### 📊 Language Distribution
 
