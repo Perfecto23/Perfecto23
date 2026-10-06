@@ -28,7 +28,7 @@
 
 ## ✨ AI coding usage
 
-<p><img align="top" width="49%" src="assets/ai-usage.svg" alt="AI usage: 365-day profile total, rolling 30 days and daily heatmap" /> <img align="top" width="49%" src="assets/ai-models.svg" alt="AI models: past 30 days Top 5, share of all model tokens" /></p>
+<p><img align="top" width="400" src="assets/ai-usage.svg" alt="AI usage: 365-day profile total, rolling 30 days and daily heatmap" /> <img align="top" width="400" src="assets/ai-models.svg" alt="AI models: past 30 days Top 5, share of all model tokens" /></p>
 
 [View TokenTracker profile](https://www.tokentracker.cc/u/b6f3aece-2e2d-4764-91aa-963aa814aca0) · Public profile total (365 days) · Last 30 days model mix
 
@@ -52,15 +52,15 @@
 
 ## 📊 GitHub Stats
 
-<p><img align="top" width="49%" src="https://github-stats.perfecto23.com/api?username=Perfecto23&amp;show_icons=true&amp;theme=tokyonight&amp;include_all_commits=true&amp;hide_border=true&amp;card_width=495" alt="GitHub Stats: stars, all-time commits, PRs, issues, contributed-to and rank ring" /> <img align="top" width="49%" src="https://github-stats.perfecto23.com/api/streak?username=Perfecto23&amp;theme=tokyonight&amp;hide_border=true" alt="GitHub Streak: total, current and longest" /></p>
+<p><img align="top" width="400" src="https://github-stats.perfecto23.com/api?username=Perfecto23&amp;show_icons=true&amp;theme=tokyonight&amp;include_all_commits=true&amp;hide_border=true&amp;card_width=495" alt="GitHub Stats: stars, all-time commits, PRs, issues, contributed-to and rank ring" /> <img align="top" width="400" src="https://github-stats.perfecto23.com/api/streak?username=Perfecto23&amp;theme=tokyonight&amp;hide_border=true" alt="GitHub Streak: total, current and longest" /></p>
 
 ### 💻 Most Used Languages · ⏱️ Coding Time & Stats
 
-<p><img align="top" width="49%" src="https://github-stats.perfecto23.com/api/top-langs?username=Perfecto23&amp;layout=compact&amp;card_width=323&amp;theme=tokyonight&amp;langs_count=8&amp;hide_border=true" alt="Most Used Languages — compact, eight languages" /> <img align="top" width="49%" src="assets/productive-time.svg" alt="Productive time by commit hour UTC+8 — last valid provider snapshot" /></p>
+<p><img align="top" width="400" src="https://github-stats.perfecto23.com/api/top-langs?username=Perfecto23&amp;layout=compact&amp;card_width=323&amp;theme=tokyonight&amp;langs_count=8&amp;hide_border=true" alt="Most Used Languages — compact, eight languages" /> <img align="top" width="400" src="assets/productive-time.svg" alt="Productive time by commit hour UTC+8 — last valid provider snapshot" /></p>
 
 ### 📊 Language Distribution
 
-<p><img align="top" width="49%" src="https://github-stats.perfecto23.com/summary/repos-per-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Repo" /> <img align="top" width="49%" src="https://github-stats.perfecto23.com/summary/most-commit-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Commit" /></p>
+<p><img align="top" width="400" src="https://github-stats.perfecto23.com/summary/repos-per-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Repo" /> <img align="top" width="400" src="https://github-stats.perfecto23.com/summary/most-commit-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Commit" /></p>
 
 ### 📈 Activity Graph
 

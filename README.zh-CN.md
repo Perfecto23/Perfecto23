@@ -30,7 +30,7 @@
 
 ## ✨ AI 编程用量
 
-<p><img align="top" width="49%" src="assets/ai-usage.svg" alt="AI 用量：365 天主页总量、滚动 30 天统计与每日热图" /> <img align="top" width="49%" src="assets/ai-models.svg" alt="AI 模型：最近 30 天前五名及其占全部模型 Token 用量的比例" /></p>
+<p><img align="top" width="400" src="assets/ai-usage.svg" alt="AI 用量：365 天主页总量、滚动 30 天统计与每日热图" /> <img align="top" width="400" src="assets/ai-models.svg" alt="AI 模型：最近 30 天前五名及其占全部模型 Token 用量的比例" /></p>
 
 [查看 TokenTracker 主页](https://www.tokentracker.cc/u/b6f3aece-2e2d-4764-91aa-963aa814aca0) · 公开主页总量（365 天）· 最近 30 天模型用量分布
 
@@ -54,15 +54,15 @@
 
 ## 📊 GitHub 统计
 
-<p><img align="top" width="49%" src="https://github-stats.perfecto23.com/api?username=Perfecto23&amp;show_icons=true&amp;theme=tokyonight&amp;include_all_commits=true&amp;hide_border=true&amp;card_width=495" alt="GitHub 统计：星标、历史提交、PR、议题、参与仓库及等级环" /> <img align="top" width="49%" src="https://github-stats.perfecto23.com/api/streak?username=Perfecto23&amp;theme=tokyonight&amp;hide_border=true" alt="GitHub 连续贡献：贡献总量、当前及最长连续天数" /></p>
+<p><img align="top" width="400" src="https://github-stats.perfecto23.com/api?username=Perfecto23&amp;show_icons=true&amp;theme=tokyonight&amp;include_all_commits=true&amp;hide_border=true&amp;card_width=495" alt="GitHub 统计：星标、历史提交、PR、议题、参与仓库及等级环" /> <img align="top" width="400" src="https://github-stats.perfecto23.com/api/streak?username=Perfecto23&amp;theme=tokyonight&amp;hide_border=true" alt="GitHub 连续贡献：贡献总量、当前及最长连续天数" /></p>
 
 ### 💻 最常用语言 · ⏱️ 编码时间与统计
 
-<p><img align="top" width="49%" src="https://github-stats.perfecto23.com/api/top-langs?username=Perfecto23&amp;layout=compact&amp;card_width=323&amp;theme=tokyonight&amp;langs_count=8&amp;hide_border=true" alt="最常用语言 — 八种语言紧凑布局" /> <img align="top" width="49%" src="assets/productive-time.svg" alt="按 UTC+8 提交小时划分的活动分布 — 最近有效快照" /></p>
+<p><img align="top" width="400" src="https://github-stats.perfecto23.com/api/top-langs?username=Perfecto23&amp;layout=compact&amp;card_width=323&amp;theme=tokyonight&amp;langs_count=8&amp;hide_border=true" alt="最常用语言 — 八种语言紧凑布局" /> <img align="top" width="400" src="assets/productive-time.svg" alt="按 UTC+8 提交小时划分的活动分布 — 最近有效快照" /></p>
 
 ### 📊 语言分布
 
-<p><img align="top" width="49%" src="https://github-stats.perfecto23.com/summary/repos-per-language?username=Perfecto23&amp;theme=tokyonight" alt="按仓库数量划分的语言分布" /> <img align="top" width="49%" src="https://github-stats.perfecto23.com/summary/most-commit-language?username=Perfecto23&amp;theme=tokyonight" alt="按提交数量划分的语言分布" /></p>
+<p><img align="top" width="400" src="https://github-stats.perfecto23.com/summary/repos-per-language?username=Perfecto23&amp;theme=tokyonight" alt="按仓库数量划分的语言分布" /> <img align="top" width="400" src="https://github-stats.perfecto23.com/summary/most-commit-language?username=Perfecto23&amp;theme=tokyonight" alt="按提交数量划分的语言分布" /></p>
 
 ### 📈 活动图表
 

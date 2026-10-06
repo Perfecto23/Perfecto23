@@ -268,22 +268,31 @@ def update_projects(today, captured):
     projects = filter_projects(raw['repositories'], CONFIG)
     if not projects: raise InvalidData('empty external upstream list')
     links = ' · '.join(f'<a href="{html.escape(p["url"], quote=True)}">{html.escape(p["name"])}</a>' for p in projects[:12])
-    path = ROOT / 'README.md'
-    text = path.read_text()
     pattern = r'(?<=<!-- BEGIN AUTO:PROJECTS -->).*?(?=<!-- END AUTO:PROJECTS -->)'
-    if len(re.findall(pattern, text, re.S)) != 1: raise InvalidData('project markers missing/duplicated')
-    updated = re.sub(pattern, lambda _: '\n<p><strong>Contributed to:</strong> ' + links + '</p>\n', text, flags=re.S)
-    if updated != text: path.write_text(updated)
+    updates = []
+    for filename, label in (('README.md', 'Contributed to:'), ('README.zh-CN.md', '参与贡献的项目：')):
+        path = ROOT / filename
+        text = path.read_text()
+        if len(re.findall(pattern, text, re.S)) != 1:
+            raise InvalidData(f'{filename}: project markers missing/duplicated')
+        updated = re.sub(pattern, lambda _: '\n<p><strong>' + label + '</strong> ' + links + '</p>\n', text, flags=re.S)
+        updates.append((path, text, updated))
+    # Validate both documents before changing either language.
+    for path, text, updated in updates:
+        if updated != text: path.write_text(updated)
 
 def check():
-    readme = (ROOT / 'README.md').read_text()
-    assert readme.count('<details>') == readme.count('</details>')
-    assert readme.count('<picture>') == readme.count('</picture>')
-    for path in re.findall(r'(?:src|srcset)="(assets/[^"\s]+)"', readme):
-        assert (ROOT / path).is_file(), path
+    for filename in ('README.md', 'README.zh-CN.md'):
+        readme = (ROOT / filename).read_text()
+        assert readme.count('<details>') == readme.count('</details>')
+        assert readme.count('<picture>') == readme.count('</picture>')
+        assert readme.count('<!-- BEGIN AUTO:PROJECTS -->') == 1
+        assert readme.count('<!-- END AUTO:PROJECTS -->') == 1
+        for path in re.findall(r'(?:src|srcset)="(assets/[^"\s]+)"', readme):
+            assert (ROOT / path).is_file(), path
     for path in (ROOT / 'assets').glob('*.svg'): ET.parse(path)
     validate_productive((ROOT / 'assets/productive-time.svg').read_bytes())
-    print('README and custom SVG resources valid')
+    print('Both READMEs and custom SVG resources valid')
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
