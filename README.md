@@ -82,6 +82,10 @@
 
 ## 🌱 Contributions in motion
 
+### 🌃 Contributions after dark
+
+<img width="100%" src="assets/contributions-3d.svg" alt="Perfecto23 public contribution calendar in a growing 3D night skyline" />
+
 ### 🌳 A bonsai grown from my GitHub history
 
 <p align="center"><img width="294" src="assets/bonsai.gif" alt="Perfecto23's contribution bonsai growing from seed" /></p>

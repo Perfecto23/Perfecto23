@@ -36,6 +36,14 @@ jobs:
           ref: bec04c39f62731fdb28c3b82322ef21cbf3bdfac
           path: .art-tools/bonsai
           persist-credentials: false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: yoshi389111/github-profile-3d-contrib
+          ref: 9e3f937195cf840d364388973f73e3c4b3753586
+          path: .art-tools/3d
+          persist-credentials: false
+      - name: Render public 3D night calendar
+        run: python3 scripts/render-3d.py .art-tools/3d
       - name: Render cat and bonsai from public GitHub activity
         env:
           GITHUB_TOKEN: ${{ github.token }}
@@ -78,6 +86,7 @@ jobs:
             assets/tomo.svg
             assets/bonsai.gif
             assets/snake.svg
+            assets/contributions-3d.svg
           retention-days: 7
   publish:
     if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
@@ -97,7 +106,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- assets/snake.svg assets/tomo.svg assets/bonsai.gif
+          git add -- assets/contributions-3d.svg assets/snake.svg assets/tomo.svg assets/bonsai.gif
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'Update profile art [skip ci]'
           git pull --rebase
