@@ -60,7 +60,7 @@
 
 ### 📊 Language Distribution
 
-<p><img align="top" width="49%" src="https://perfecto-summary-cards.vercel.app/api/cards/repos-per-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Repo" /> <img align="top" width="49%" src="https://perfecto-summary-cards.vercel.app/api/cards/most-commit-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Commit" /></p>
+<p><img align="top" width="49%" src="https://github-stats.perfecto23.com/summary/repos-per-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Repo" /> <img align="top" width="49%" src="https://github-stats.perfecto23.com/summary/most-commit-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Commit" /></p>
 
 ### 📈 Activity Graph
 
@@ -70,14 +70,14 @@
 
 <picture>
   <source media="(max-width: 600px)" srcset="assets/overview-mobile.svg" />
-  <img width="100%" src="https://perfecto-summary-cards.vercel.app/api/cards/profile-details?username=Perfecto23&amp;theme=tokyonight" alt="GitHub Profile Summary overview" />
+  <img width="100%" src="https://github-stats.perfecto23.com/summary/profile-details?username=Perfecto23&amp;theme=tokyonight" alt="GitHub Profile Summary overview" />
 </picture>
 
 ### 🏆 Achievements
 
 <picture>
-  <source media="(max-width: 600px)" srcset="https://trophy.ryglcloud.net/?username=Perfecto23&amp;theme=tokyonight&amp;no-frame=true&amp;column=2&amp;row=5&amp;margin-w=12&amp;margin-h=16" />
-  <img width="100%" src="https://trophy.ryglcloud.net/?username=Perfecto23&amp;theme=tokyonight&amp;no-frame=true&amp;column=5&amp;row=2&amp;margin-w=12&amp;margin-h=16" alt="GitHub trophies" />
+  <source media="(max-width: 600px)" srcset="https://github-stats.perfecto23.com/trophy?v=2&amp;username=Perfecto23&amp;theme=tokyonight&amp;no-frame=true&amp;column=2&amp;row=5&amp;margin-w=12&amp;margin-h=16" />
+  <img width="100%" src="https://github-stats.perfecto23.com/trophy?v=2&amp;username=Perfecto23&amp;theme=tokyonight&amp;no-frame=true&amp;column=5&amp;row=2&amp;margin-w=12&amp;margin-h=16" alt="GitHub trophies" />
 </picture>
 
 ## 🌱 Contributions in motion

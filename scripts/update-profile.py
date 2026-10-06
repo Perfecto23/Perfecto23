@@ -230,7 +230,7 @@ def validate_productive(raw):
             raise InvalidData('unsafe SVG content')
 
 def update_productive(today, captured):
-    raw = fetch('https://perfecto-summary-cards.vercel.app/api/cards/productive-time?username='+USER+'&theme=tokyonight&utcOffset=8')
+    raw = fetch('https://github-stats.perfecto23.com/summary/productive-time?username='+USER+'&theme=tokyonight&utcOffset=8')
     validate_productive(raw)
     publish(ROOT / 'assets/productive-time.svg', raw.decode())
 
@@ -260,7 +260,7 @@ def mobile_overview(raw, captured):
     return ET.tostring(root, encoding='unicode')
 
 def update_overview(today, captured):
-    raw = fetch('https://perfecto-summary-cards.vercel.app/api/cards/profile-details?username='+USER+'&theme=tokyonight')
+    raw = fetch('https://github-stats.perfecto23.com/summary/profile-details?username='+USER+'&theme=tokyonight')
     publish(ROOT / 'assets/overview-mobile.svg', mobile_overview(raw, captured))
 
 def update_projects(today, captured):
