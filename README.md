@@ -60,7 +60,7 @@
 
 ### 📊 Language Distribution
 
-<p><img align="top" width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Repo" /> <img align="top" width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Commit" /></p>
+<p><img align="top" width="49%" src="https://perfecto-summary-cards.vercel.app/api/cards/repos-per-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Repo" /> <img align="top" width="49%" src="https://perfecto-summary-cards.vercel.app/api/cards/most-commit-language?username=Perfecto23&amp;theme=tokyonight" alt="Top Languages by Commit" /></p>
 
 ### 📈 Activity Graph
 
@@ -70,7 +70,7 @@
 
 <picture>
   <source media="(max-width: 600px)" srcset="assets/overview-mobile.svg" />
-  <img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Perfecto23&amp;theme=tokyonight" alt="GitHub Profile Summary overview" />
+  <img width="100%" src="https://perfecto-summary-cards.vercel.app/api/cards/profile-details?username=Perfecto23&amp;theme=tokyonight" alt="GitHub Profile Summary overview" />
 </picture>
 
 ### 🏆 Achievements
