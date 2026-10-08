@@ -28,7 +28,8 @@ class T(unittest.TestCase):
   with patch.object(u,'fetch',side_effect=OSError('unavailable')):
    with self.assertRaises(OSError):u.update_ai(TODAY,'2026-10-06T12:00:00Z')
   u.mark_ai_retained(TODAY,'2026-10-06T12:00:00Z')
-  def data(s):return re.sub(r'<text[^>]*>(?:Refresh failed.*?|Perfecto · TokenTracker|Total: .*?|30d: .*?)</text>','',s)
+  # Optimizers may omit the final newline; publish() restores it.
+  def data(s):return re.sub(r'<text[^>]*>(?:Refresh failed.*?|Perfecto · TokenTracker|Total: .*?|30d: .*?)</text>','',s).rstrip('\r\n')
   for n,old in originals.items():
    new=(self.root/'assets'/n).read_text();self.assertEqual(data(old),data(new));self.assertIn('retained',new)
   with patch.object(u,'fetch',return_value=json.dumps(fixture()).encode()):u.update_ai(TODAY,'2026-10-06T12:00:00Z')
