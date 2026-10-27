@@ -20,7 +20,7 @@
 
 <div>
 <!-- BEGIN AUTO:PROJECTS -->
-<p><strong>Contributed to:</strong> <a href="https://github.com/Tencent/WeKnora">Tencent WeKnora</a> · <a href="https://github.com/heroui-inc/heroui-cli">heroui-cli</a> · <a href="https://github.com/langgenius/dify">Dify</a> · <a href="https://github.com/pnpm/pnpm">pnpm</a> · <a href="https://github.com/web-infra-dev/rspack">Rspack</a></p>
+<p><strong>Contributed to:</strong> <a href="https://github.com/Tencent/WeKnora">Tencent WeKnora</a> · <a href="https://github.com/web-infra-dev/rspack">Rspack</a> · <a href="https://github.com/heroui-inc/heroui-cli">heroui-cli</a> · <a href="https://github.com/langgenius/dify">Dify</a> · <a href="https://github.com/pnpm/pnpm">pnpm</a></p>
 <!-- END AUTO:PROJECTS -->
 </div>
 
