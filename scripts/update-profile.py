@@ -183,14 +183,18 @@ def profile_total(profile, captured):
     expected = [(start+dt.timedelta(days=i)).isoformat() for i in range(365)]
     if sorted(row['date'] for row in rows) != expected:
         raise InvalidData('public profile total requires a complete daily window')
-    total = count(profile['totals']['total_tokens'])
-    if not total or sum(count(row['total_tokens']) for row in rows) != total:
-        raise InvalidData('public profile headline does not reconcile with daily usage')
+    # The leaderboard snapshot headline can diverge from the daily series.
+    values = [row.get('total_tokens') for row in rows]
+    if any(v is None for v in values):
+        raise InvalidData('public profile total is zero or missing')
+    total = sum(count(v) for v in values)
+    if not total:
+        raise InvalidData('public profile total is zero or missing')
     return {'display': compact(total, 1), 'captured_at': captured,
             'window': [start.isoformat(), end.isoformat()], 'total_tokens': total}
 
 def update_ai(today, captured):
-    # Headline, 30-day models and heatmap come from the same public profile response.
+    # 30-day models and the 365-day heatmap come from the same public profile response.
     profile = json.loads(fetch(TOKEN_BASE + 'tokentracker-leaderboard-profile?user_id=' + TOKEN_USER + '&period=total&tz=Etc%2FUTC'))
     daily = normalize_profile(profile, today, captured)
     profile_summary = profile_total(profile, captured)
