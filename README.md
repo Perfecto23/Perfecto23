@@ -14,7 +14,7 @@
 
 <img width="100%" src="assets/tomo.svg" alt="YourTomo pixel cat reacting to Perfecto23's GitHub activity" />
 
-[Email](mailto:kepengcheng314@gmail.com) · [GitHub](https://github.com/Perfecto23) · [TokenTracker](https://www.tokentracker.cc/u/b6f3aece-2e2d-4764-91aa-963aa814aca0)
+[Email](mailto:kepengcheng314@gmail.com) · [GitHub](https://github.com/Perfecto23) · [tokscale](https://tokscale.ai/u/Perfecto23)
 
 <img src="https://img.shields.io/github/followers/Perfecto23?style=for-the-badge&amp;color=38bdae&amp;labelColor=1a1b27&amp;logo=github&amp;logoColor=38bdae" alt="Followers" /> <img src="https://img.shields.io/github/stars/Perfecto23?affiliations=OWNER&amp;style=for-the-badge&amp;color=bf91f3&amp;labelColor=1a1b27&amp;logo=github&amp;logoColor=bf91f3" alt="Stars" /> <img src="https://komarev.com/ghpvc/?username=Perfecto23&amp;color=38bdae&amp;style=for-the-badge&amp;label=Profile+Views" alt="Profile Views" />
 
@@ -28,9 +28,14 @@
 
 ## ✨ AI coding usage
 
-<p><img align="top" width="400" src="assets/ai-usage.svg" alt="AI usage: 365-day profile total, rolling 30 days and daily heatmap" /> <img align="top" width="400" src="assets/ai-models.svg" alt="AI models: past 30 days Top 5, share of all model tokens" /></p>
+<picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 740px)" srcset="assets/ai-usage-mobile-dark.svg" />
+  <source media="(max-width: 740px)" srcset="assets/ai-usage-mobile-light.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/ai-usage-dark.svg" />
+  <img width="100%" src="assets/ai-usage-light.svg" alt="AI coding usage from tokscale: all-time tokens, trailing-year active days, rank, top clients and models, and a daily heatmap" />
+</picture>
 
-[View TokenTracker profile](https://www.tokentracker.cc/u/b6f3aece-2e2d-4764-91aa-963aa814aca0) · Public profile total (365 days) · Last 30 days model mix
+[View tokscale profile](https://tokscale.ai/u/Perfecto23) · Public totals, no login · Trailing-year heatmap in UTC
 
 ---
 

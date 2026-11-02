@@ -16,7 +16,7 @@
 
 <img width="100%" src="assets/tomo.svg" alt="随 Perfecto23 GitHub 活动变化的 YourTomo 像素猫" />
 
-[邮箱](mailto:kepengcheng314@gmail.com) · [GitHub](https://github.com/Perfecto23) · [TokenTracker](https://www.tokentracker.cc/u/b6f3aece-2e2d-4764-91aa-963aa814aca0)
+[邮箱](mailto:kepengcheng314@gmail.com) · [GitHub](https://github.com/Perfecto23) · [tokscale](https://tokscale.ai/u/Perfecto23)
 
 <img src="https://img.shields.io/github/followers/Perfecto23?style=for-the-badge&amp;color=38bdae&amp;labelColor=1a1b27&amp;logo=github&amp;logoColor=38bdae" alt="关注者" /> <img src="https://img.shields.io/github/stars/Perfecto23?affiliations=OWNER&amp;style=for-the-badge&amp;color=bf91f3&amp;labelColor=1a1b27&amp;logo=github&amp;logoColor=bf91f3" alt="星标数" /> <img src="https://komarev.com/ghpvc/?username=Perfecto23&amp;color=38bdae&amp;style=for-the-badge&amp;label=Profile+Views" alt="主页访问量" />
 
@@ -30,9 +30,14 @@
 
 ## ✨ AI 编程用量
 
-<p><img align="top" width="400" src="assets/ai-usage.svg" alt="AI 用量：365 天主页总量、滚动 30 天统计与每日热图" /> <img align="top" width="400" src="assets/ai-models.svg" alt="AI 模型：最近 30 天前五名及其占全部模型 Token 用量的比例" /></p>
+<picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 740px)" srcset="assets/ai-usage-mobile-dark.svg" />
+  <source media="(max-width: 740px)" srcset="assets/ai-usage-mobile-light.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/ai-usage-dark.svg" />
+  <img width="100%" src="assets/ai-usage-light.svg" alt="来自 tokscale 的 AI 编程用量：累计 Token、近一年活跃天数、排名、主要客户端与模型，以及每日热图" />
+</picture>
 
-[查看 TokenTracker 主页](https://www.tokentracker.cc/u/b6f3aece-2e2d-4764-91aa-963aa814aca0) · 公开主页总量（365 天）· 最近 30 天模型用量分布
+[查看 tokscale 主页](https://tokscale.ai/u/Perfecto23) · 公开数据，无需登录 · 近一年热图（UTC）
 
 ---
 
