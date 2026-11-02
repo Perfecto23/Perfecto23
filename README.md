@@ -32,7 +32,7 @@
   <source media="(prefers-color-scheme: dark) and (max-width: 740px)" srcset="assets/ai-usage-mobile-dark.svg" />
   <source media="(max-width: 740px)" srcset="assets/ai-usage-mobile-light.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="assets/ai-usage-dark.svg" />
-  <img width="100%" src="assets/ai-usage-light.svg" alt="AI coding usage from tokscale: all-time tokens, trailing-year active days, rank, top clients and models, and a daily heatmap" />
+  <img width="100%" src="assets/ai-usage-light.svg" alt="AI coding usage from tokscale: all-time tokens, peak day, trailing-year active days, rank, model and client share, and a daily heatmap" />
 </picture>
 
 [View tokscale profile](https://tokscale.ai/u/Perfecto23) · Public totals, no login · Trailing-year heatmap in UTC

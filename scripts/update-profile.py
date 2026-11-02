@@ -36,12 +36,16 @@ THEMES = {
         'bg': '#ffffff', 'border': '#d6d3d1', 'title': '#1c1917', 'muted': '#57534e',
         'faint': '#a8a29e', 'hero': '#6d28d9', 'line': '#6d28d9', 'area_opacity': '0.34',
         'track': '#e7e5e4',
+        'tile': '#f5f3ff', 'tile_border': '#ddd6fe',
+        'mix': ['#5b21b6', '#7c3aed', '#a78bfa', '#c4b5fd'], 'mix_rest': '#e7e5e4',
         'levels': ['#f5f5f4', '#ddd6fe', '#c4b5fd', '#8b5cf6', '#5b21b6'],
     },
     'dark': {
         'bg': '#161b22', 'border': '#30363d', 'title': '#f5f5f4', 'muted': '#a8a29e',
         'faint': '#78716c', 'hero': '#c4b5fd', 'line': '#c4b5fd', 'area_opacity': '0.55',
         'track': '#30363d',
+        'tile': '#241c33', 'tile_border': '#3d3454',
+        'mix': ['#c4b5fd', '#8b5cf6', '#6d28d9', '#4c1d95'], 'mix_rest': '#3d444d',
         'levels': ['#21262d', '#4c1d95', '#7c3aed', '#a78bfa', '#c4b5fd'],
     },
 }
@@ -113,10 +117,15 @@ def client_label(name):
         return ''
     return name[0].upper() + name[1:]
 
-def active_label(span):
-    if 360 <= span <= 372:
-        return 'Active days · 1y'
-    return f'Active days · {span}d'
+def active_caption(data):
+    pct = share(data['active_days'], data['span_days'])
+    if 360 <= data['span_days'] <= 372:
+        return pct + ' of the year'
+    return pct + f" of {data['span_days']}d"
+
+def short_day(iso):
+    date = dt.date.fromisoformat(iso)
+    return f'{MONTHS[date.month - 1]} {date.day}'
 
 def subtitle_for(data, layout):
     if 360 <= data['span_days'] <= 372:
@@ -284,6 +293,9 @@ def normalize_tokscale(obj, as_of, captured_at):
         if total:
             active += 1
         days.append({'date': date.isoformat(), 'total_tokens': total})
+    if not days:
+        raise InvalidData('chart window is empty')
+    peak = max(days, key=lambda day: (day['total_tokens'], day['date']))
     client_rows = [{'name': name, 'label': client_label(name), 'tokens': tokens}
                    for name, tokens in clients.items() if tokens > 0]
     model_rows = [{'name': name, 'tokens': tokens} for name, tokens in models.items() if tokens > 0]
@@ -313,6 +325,8 @@ def normalize_tokscale(obj, as_of, captured_at):
         'rank': rank,
         'total_tokens': series_total,
         'active_days': active,
+        'peak_tokens': peak['total_tokens'],
+        'peak_date': peak['date'],
         'window': [start.isoformat(), end.isoformat()],
         'span_days': span,
         'days': days,
@@ -332,11 +346,6 @@ def text(x, y, value, size=14, color='#24292f', weight=400, anchor=None, eid=Non
     if eid:
         attrs.insert(0, f'id="{eid}"')
     return f'<text {" ".join(attrs)}>{esc(value)}</text>'
-
-def fit_name(name, limit=14):
-    if len(name) <= limit:
-        return name
-    return name[:limit - 1] + '…'
 
 def rank_label(rank):
     return f'#{rank:,}'
@@ -392,9 +401,9 @@ def month_marks(columns, grid_x, step):
         previous = date.month
     return marks
 
-def mix_line(x, y, prefix, entries, total, theme, max_width):
+def mix_line(x, y, prefix, entries, total, theme, max_width, prefix_width=72):
     chosen = []
-    for entry in entries[:4]:
+    for entry in entries[:5]:
         label = entry.get('label') or entry['name']
         trial = chosen + [(label, share(entry['tokens'], total))]
         estimate = sum(len(label) + len(pct) + 4 for label, pct in trial)
@@ -410,10 +419,9 @@ def mix_line(x, y, prefix, entries, total, theme, max_width):
     if not spans:
         spans.append(f'<tspan fill="{theme["muted"]}">—</tspan>')
     inner = ''.join(spans)
-    return (
-        text(x, y, prefix, 12, theme['muted'], 600)
-        + f'<text x="{x + 78}" y="{y}" font-size="13">{inner}</text>'
-    )
+    name_x = x if not prefix else x + prefix_width
+    prefix_svg = text(x, y, prefix, 12, theme['muted'], 600) if prefix else ''
+    return prefix_svg + f'<text x="{name_x}" y="{y}" font-size="13">{inner}</text>'
 
 def legend(x, y, theme):
     parts = [text(x, y, 'Less', 11, theme['muted'])]
@@ -427,7 +435,8 @@ def legend(x, y, theme):
 def card_title(data):
     return (
         f"{data['display_name']} AI coding usage on tokscale: "
-        f"{hero_compact(data['total_tokens'])} tokens, {data['active_days']} active days, rank {data['rank']}"
+        f"{hero_compact(data['total_tokens'])} tokens, peak {compact(data['peak_tokens'], 2)}, "
+        f"{data['active_days']} active days, rank {data['rank']}"
     )
 
 def svg_doc(width, height, title, body):
@@ -452,12 +461,99 @@ def header(data, theme, layout, title_x, title_y, right_x):
         text(title_x + 14, subtitle_y, subtitle_for(data, layout), 12, theme['muted']),
     ])
 
-def render_stats(items, xs, label_y, value_y, value_size, theme):
-    parts = []
-    for x, (value, label, color) in zip(xs, items):
-        parts.append(text(x, label_y, label, 11, theme['muted'], 500))
-        parts.append(text(x, value_y, value, value_size_for(value, value_size), color, 700))
+def label_entries(entries, total, limit=4):
+    shown = [entry for entry in entries if entry['tokens'] > 0][:limit]
+    rest = total - sum(entry['tokens'] for entry in shown)
+    if rest > 0 and total and rest / total >= 0.05:
+        shown.append({'name': 'Other', 'label': 'Other', 'tokens': rest})
+    return shown
+
+def stacked_rows(entries, total, limit=4):
+    shown = [entry for entry in entries[:limit] if entry['tokens'] > 0]
+    used = sum(entry['tokens'] for entry in shown)
+    rows = [{
+        'label': entry.get('label') or entry['name'],
+        'tokens': entry['tokens'],
+        'rest': False,
+    } for entry in shown]
+    rest = total - used
+    if rest > 0:
+        rows.append({'label': 'Other', 'tokens': rest, 'rest': True})
+    return rows
+
+def segment_widths(weights, width, gap, minimum=5):
+    count_rows = len(weights)
+    if count_rows == 0:
+        return []
+    usable = width - gap * (count_rows - 1)
+    if usable <= 0:
+        return [0.0] * count_rows
+    whole = sum(weights) or 1
+    raw = [usable * weight / whole for weight in weights]
+    if minimum * count_rows > usable:
+        return raw
+    widths = [max(minimum, value) for value in raw]
+    extra = sum(widths) - usable
+    if extra <= 0:
+        return widths
+    flexible = [index for index, value in enumerate(raw) if value > minimum]
+    pool = sum(widths[index] - minimum for index in flexible)
+    if pool <= 0:
+        return raw
+    for index in flexible:
+        room = widths[index] - minimum
+        widths[index] -= extra * room / pool
+    return widths
+
+def stacked_bar(x, y, width, height, entries, total, theme, chart_id):
+    rows = stacked_rows(entries, total)
+    gap = 3
+    widths = segment_widths([row['tokens'] for row in rows], width, gap)
+    parts = [f'<g data-chart="mix" data-mix="{esc(chart_id)}">']
+    cursor = float(x)
+    for index, (row, seg_w) in enumerate(zip(rows, widths)):
+        color = theme['mix_rest'] if row['rest'] else theme['mix'][min(index, len(theme['mix']) - 1)]
+        tip = f"{row['label']}: {compact(row['tokens'])} tokens, {share(row['tokens'], total)}"
+        parts.append(
+            f'<rect x="{cursor:.2f}" y="{y}" width="{max(seg_w, 0):.2f}" height="{height}" rx="{height / 2:.1f}" fill="{color}">'
+            f'<title>{esc(tip)}</title></rect>'
+        )
+        cursor += seg_w + gap
+    parts.append('</g>')
     return ''.join(parts)
+
+def metric_tile(x, y, width, height, label, value, caption, theme, value_color, tip):
+    return ''.join([
+        '<g>',
+        f'<title>{esc(tip)}</title>',
+        f'<rect x="{x:.2f}" y="{y}" width="{width:.2f}" height="{height}" rx="12" fill="{theme["tile"]}" stroke="{theme["tile_border"]}"/>',
+        text(x + 14, y + 22, label, 11, theme['muted'], 600),
+        text(x + 14, y + 52, value, value_size_for(value, 26), value_color, 700),
+        text(x + 14, y + 72, caption, 11, theme['faint'], 500),
+        '</g>',
+    ])
+
+def dimension_tiles(data, theme, x, y, width, gap=10):
+    tile_w = (width - 2 * gap) / 3
+    specs = [
+        ('Peak day', compact(data['peak_tokens'], 2), short_day(data['peak_date']), theme['hero'],
+         f"Peak day {data['peak_date']}: {compact(data['peak_tokens'])} tokens"),
+        ('Active days', f"{data['active_days']:,}", active_caption(data), theme['title'],
+         f"{data['active_days']} active days in {data['span_days']}"),
+        ('All-time rank', rank_label(data['rank']), 'on tokscale', theme['title'],
+         f"All-time rank {data['rank']}"),
+    ]
+    parts = []
+    for index, (label, value, caption, color, tip) in enumerate(specs):
+        parts.append(metric_tile(x + index * (tile_w + gap), y, tile_w, 86, label, value, caption, theme, color, tip))
+    return ''.join(parts)
+
+def share_block(x, y, width, title, entries, total, theme, chart_id):
+    return ''.join([
+        text(x, y, title, 12, theme['muted'], 600),
+        stacked_bar(x, y + 8, width, 12, entries, total, theme, chart_id),
+        mix_line(x, y + 36, '', label_entries(entries, total), total, theme, width, prefix_width=0),
+    ])
 
 def heatmap(data, theme, grid_x, grid_y, max_width):
     columns = week_columns(data['days'])
@@ -539,61 +635,31 @@ def area_chart(data, theme, x, y, width, height):
     ]
     return ''.join(parts)
 
-def bar_row(x, y, width, name, pct, ratio, theme, tip):
-    name_width = 128
-    pct_width = 54
-    bar_x = x + name_width
-    bar_width = width - name_width - pct_width
-    fill_width = 0
-    if ratio > 0:
-        fill_width = max(4, int(round(bar_width * min(1, ratio))))
-    bar_y = y - 8
-    return ''.join([
-        f'<g><title>{esc(tip)}</title>',
-        text(x, y, fit_name(name, 18), 13, theme['title'], 600),
-        f'<rect x="{bar_x}" y="{bar_y}" width="{bar_width}" height="4" rx="2" fill="{theme["track"]}"/>',
-        f'<rect x="{bar_x}" y="{bar_y}" width="{fill_width}" height="4" rx="2" fill="{theme["hero"]}"/>',
-        text(x + width, y, pct, 12, theme['muted'], 600, anchor='end'),
-        '</g>',
-    ])
-
-def desktop_stats(data, theme):
-    total = data['total_tokens']
-    top = data['clients'][0]
-    return [
-        (hero_compact(total), 'Total tokens', theme['hero']),
-        (f"{data['active_days']:,}", active_label(data['span_days']), theme['title']),
-        (rank_label(data['rank']), 'All-time rank', theme['title']),
-        (fit_name(top['label'], 12), f"Top client · {share(top['tokens'], total)}", theme['title']),
-    ]
-
 def render_desktop(data, theme, as_of):
     width = 820
-    grid_x = 40
-    right = width - 28
-    title_y = 36
-    label_y = 88
-    value_y = 120
-    models_y = 156
-    clients_y = 178
-    rule_y = 198
-    grid_y = 228
-    chart, grid_bottom, _grid_width = heatmap(data, theme, grid_x, grid_y, 739)
+    left = 36
+    right = width - 36
+    inner = right - left
+    total = data['total_tokens']
+    tiles_x = left + 236
+    rule_y = 312
+    grid_y = 338
+    chart, grid_bottom, _grid_width = heatmap(data, theme, left, grid_y, inner)
     legend_y = grid_bottom + 22
     height = legend_y + 18
-    total = data['total_tokens']
-    xs = [40, 230, 420, 610]
     start, end = data['window']
     body = '\n'.join([
         frame(width, height, theme),
-        header(data, theme, 'desktop', grid_x, title_y, right),
-        render_stats(desktop_stats(data, theme), xs, label_y, value_y, 30, theme),
-        mix_line(grid_x, models_y, 'Models', data['models'], total, theme, right - grid_x - 78),
-        mix_line(grid_x, clients_y, 'Clients', data['clients'], total, theme, right - grid_x - 78),
-        f'<line x1="{grid_x}" y1="{rule_y}.5" x2="{right}" y2="{rule_y}.5" stroke="{theme["border"]}"/>',
+        header(data, theme, 'desktop', left, 36, right),
+        text(left, 96, 'Total tokens', 12, theme['muted'], 600),
+        text(left, 146, hero_compact(total), 48, theme['hero'], 700),
+        dimension_tiles(data, theme, tiles_x, 78, right - tiles_x),
+        share_block(left, 188, inner, 'Models', data['models'], total, theme, 'models'),
+        share_block(left, 252, inner, 'Clients', data['clients'], total, theme, 'clients'),
+        f'<line x1="{left}" y1="{rule_y}.5" x2="{right}" y2="{rule_y}.5" stroke="{theme["border"]}"/>',
         chart,
-        legend(grid_x, legend_y, theme),
-        text((grid_x + right) // 2, legend_y, f'{start} – {end}', 11, theme['muted'], anchor='middle'),
+        legend(left, legend_y, theme),
+        text((left + right) // 2, legend_y, f'{start} – {end}', 11, theme['muted'], anchor='middle'),
         text(right, legend_y, status_line(data, as_of), 11, theme['muted'], anchor='end', eid='ai-status'),
     ])
     return svg_doc(width, height, card_title(data), body)
@@ -604,41 +670,25 @@ def render_mobile(data, theme, as_of):
     right = width - pad
     inner = right - pad
     total = data['total_tokens']
-    top = data['clients'][0]
-    title_y = 32
-    left_stats = [
-        (hero_compact(total), 'Total tokens', theme['hero']),
-        (rank_label(data['rank']), 'All-time rank', theme['title']),
+    peak = compact(data['peak_tokens'], 2)
+    tile_w = (inner - 10) / 2
+    parts = [
+        frame(width, 10, theme),
+        header(data, theme, 'mobile', pad, 32, right),
+        text(pad, 72, 'Total tokens', 11, theme['muted'], 600),
+        text(pad, 108, hero_compact(total), 36, theme['hero'], 700),
+        text(196, 72, 'Peak day', 11, theme['muted'], 600),
+        text(196, 108, peak, value_size_for(peak, 28), theme['hero'], 700),
+        text(196, 126, short_day(data['peak_date']), 11, theme['faint']),
+        metric_tile(pad, 142, tile_w, 86, 'Active days', f"{data['active_days']:,}", active_caption(data), theme, theme['title'],
+                    f"{data['active_days']} active days in {data['span_days']}"),
+        metric_tile(pad + tile_w + 10, 142, tile_w, 86, 'All-time rank', rank_label(data['rank']), 'on tokscale', theme, theme['title'],
+                    f"All-time rank {data['rank']}"),
+        share_block(pad, 248, inner, 'Models', data['models'], total, theme, 'models'),
+        share_block(pad, 310, inner, 'Clients', data['clients'], total, theme, 'clients'),
+        text(pad, 372, 'Daily tokens · sqrt scale', 11, theme['muted'], 500),
     ]
-    right_stats = [
-        (f"{data['active_days']:,}", active_label(data['span_days']), theme['title']),
-        (fit_name(top['label'], 12), f"Top client · {share(top['tokens'], total)}", theme['title']),
-    ]
-    columns = [(pad, left_stats), (188, right_stats)]
-    parts = [frame(width, 10, theme), header(data, theme, 'mobile', pad, title_y, right)]
-    label_ys = [74, 132]
-    value_ys = [100, 158]
-    for x, stats in columns:
-        for (value, label, color), label_y, value_y in zip(stats, label_ys, value_ys):
-            parts.append(text(x, label_y, label, 11, theme['muted'], 500))
-            parts.append(text(x, value_y, value, value_size_for(value, 24), color, 700))
-    y = 188
-    parts.append(text(pad, y, 'Models', 11, theme['muted'], 600))
-    y = 210
-    for entry in data['models'][:3]:
-        tip = f"{entry['name']}: {compact(entry['tokens'])} tokens, {share(entry['tokens'], total)}"
-        parts.append(bar_row(pad, y, inner, entry['name'], share(entry['tokens'], total), entry['tokens'] / total, theme, tip))
-        y += 22
-    y += 8
-    parts.append(text(pad, y, 'Clients', 11, theme['muted'], 600))
-    y += 22
-    for entry in data['clients'][:3]:
-        tip = f"{entry['label']}: {compact(entry['tokens'])} tokens, {share(entry['tokens'], total)}"
-        parts.append(bar_row(pad, y, inner, entry['label'], share(entry['tokens'], total), entry['tokens'] / total, theme, tip))
-        y += 22
-    y += 10
-    parts.append(text(pad, y, 'Daily tokens · sqrt scale', 11, theme['muted'], 500))
-    chart_y = y + 8
+    chart_y = 380
     chart_h = 104
     parts.append(area_chart(data, theme, pad, chart_y, inner, chart_h))
     date_y = chart_y + chart_h + 16
