@@ -23,6 +23,15 @@ class T(unittest.TestCase):
  def test_bad_year_scope(self):
   f=fixture();f['period']['from']='2026-01-01'
   with self.assertRaises(u.InvalidData):u.profile_total(f,'stamp')
+ def test_profile_total_uses_heatmap_sum(self):
+  f=fixture();f['totals']={'source':'leaderboard_snapshot','total_tokens':1}
+  self.assertEqual(u.profile_total(f,'stamp')['total_tokens'],7665)
+  del f['totals']
+  self.assertEqual(u.profile_total(f,'stamp')['total_tokens'],7665)
+  for row in f['heatmap']:row['total_tokens']=0
+  with self.assertRaises(u.InvalidData):u.profile_total(f,'stamp')
+  f=fixture();f['heatmap'][-1].pop('total_tokens')
+  with self.assertRaises(u.InvalidData):u.profile_total(f,'stamp')
  def test_failure_retention_recovery(self):
   originals={p.name:p.read_text() for p in (self.root/'assets').glob('ai-*.svg')}
   with patch.object(u,'fetch',side_effect=OSError('unavailable')):
