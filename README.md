@@ -30,10 +30,10 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/ai-usage-dark.svg" />
-  <img width="100%" src="assets/ai-usage-light.svg" alt="AI coding usage from tokscale: all-time tokens, peak day, trailing-year active days, rank, monthly totals, model and client share, and a daily heatmap" />
+  <img width="100%" src="assets/ai-usage-light.svg" alt="AI coding usage from tokscale: all-time tokens, peak day, trailing-year active days, rank, last 30 days versus the previous 30, monthly totals, model and client share, and a daily heatmap" />
 </picture>
 
-[View tokscale profile](https://tokscale.ai/u/Perfecto23) · Public totals, no login · Trailing-year months and heatmap in UTC
+[View tokscale profile](https://tokscale.ai/u/Perfecto23) · Public totals, no login · 30-day change, monthly totals, and heatmap in UTC
 
 ---
 
