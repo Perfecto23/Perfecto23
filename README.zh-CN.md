@@ -31,8 +31,6 @@
 ## ✨ AI 编程用量
 
 <picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 740px)" srcset="assets/ai-usage-mobile-dark.svg" />
-  <source media="(max-width: 740px)" srcset="assets/ai-usage-mobile-light.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="assets/ai-usage-dark.svg" />
   <img width="100%" src="assets/ai-usage-light.svg" alt="来自 tokscale 的 AI 编程用量：累计 Token、单日峰值、近一年活跃天数、排名、模型与客户端占比，以及每日热图" />
 </picture>

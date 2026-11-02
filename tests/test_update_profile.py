@@ -156,14 +156,12 @@ class T(unittest.TestCase):
         with self.assertRaises(u.InvalidData):
             u.normalize_tokscale(payload, TODAY, 'stamp')
 
-    def test_render_light_dark_and_mobile(self):
+    def test_render_light_and_dark(self):
         data = u.normalize_tokscale(fixture(), TODAY, '2026-10-06T12:00:00Z')
-        light = u.render_usage(data, 'light', 'desktop', TODAY)
-        dark = u.render_usage(data, 'dark', 'desktop', TODAY)
-        mobile = u.render_usage(data, 'light', 'mobile', TODAY)
-        mobile_dark = u.render_usage(data, 'dark', 'mobile', TODAY)
-        self.assertEqual(light, u.render_usage(data, 'light', 'desktop', TODAY))
-        for svg, theme in ((light, 'light'), (dark, 'dark'), (mobile, 'light'), (mobile_dark, 'dark')):
+        light = u.render_usage(data, 'light', TODAY)
+        dark = u.render_usage(data, 'dark', TODAY)
+        self.assertEqual(light, u.render_usage(data, 'light', TODAY))
+        for svg, theme in ((light, 'light'), (dark, 'dark')):
             root = ET.fromstring(svg)
             self.assertEqual(root.get('width'), root.get('viewBox').split()[2])
             self.assertNotIn('TokenTracker', svg)
@@ -184,10 +182,6 @@ class T(unittest.TestCase):
         self.assertIn('Less', light)
         self.assertIn('More', light)
         self.assertIn('width="820"', light)
-        self.assertIn('data-chart="area"', mobile)
-        self.assertIn('sqrt scale', mobile)
-        self.assertIn('width="360"', mobile)
-        self.assertNotIn('data-chart="heatmap"', mobile)
         self.assertIn('in progress', light)
 
     def test_fetch_does_not_send_github_token_to_tokscale(self):
@@ -277,13 +271,15 @@ class T(unittest.TestCase):
             text = (self.root / filename).read_text()
             self.assertIn('https://tokscale.ai/u/Perfecto23', text)
             self.assertIn('prefers-color-scheme: dark', text)
-            self.assertIn('assets/ai-usage-mobile-dark.svg', text)
+            self.assertIn('assets/ai-usage-dark.svg', text)
+            self.assertNotIn('ai-usage-mobile', text)
             self.assertNotIn('tokentracker', text.lower())
             self.assertNotIn('TokenTracker', text)
         workflow = (P / '.github/workflows/update-profile.yml').read_text()
         for name in u.AI_ASSETS:
             self.assertIn(name, workflow)
         self.assertNotIn('ai-models.svg', workflow)
+        self.assertNotIn('ai-usage-mobile', workflow)
         self.assertNotIn('tokentracker', workflow.lower())
         self.assertNotIn('TOKSCALE', workflow)
 

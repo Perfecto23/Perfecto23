@@ -17,8 +17,6 @@ TOKSCALE_API = 'https://tokscale.ai/api/users/' + TOKSCALE_USER
 AI_ASSETS = (
     'ai-usage-light.svg',
     'ai-usage-dark.svg',
-    'ai-usage-mobile-light.svg',
-    'ai-usage-mobile-dark.svg',
 )
 CONFIG = {'github_username': USER, 'identity': {'name': 'Perfecto'},
           'exclude_repo_owners': ['Perfecto23', 'MoeGo', 'moego-ai', 'moego-pet'],
@@ -34,7 +32,7 @@ MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 
 THEMES = {
     'light': {
         'bg': '#ffffff', 'border': '#d6d3d1', 'title': '#1c1917', 'muted': '#57534e',
-        'faint': '#a8a29e', 'hero': '#6d28d9', 'line': '#6d28d9', 'area_opacity': '0.34',
+        'faint': '#a8a29e', 'hero': '#6d28d9',
         'track': '#e7e5e4',
         'tile': '#f5f3ff', 'tile_border': '#ddd6fe',
         'mix': ['#5b21b6', '#7c3aed', '#a78bfa', '#c4b5fd'], 'mix_rest': '#e7e5e4',
@@ -42,7 +40,7 @@ THEMES = {
     },
     'dark': {
         'bg': '#161b22', 'border': '#30363d', 'title': '#f5f5f4', 'muted': '#a8a29e',
-        'faint': '#78716c', 'hero': '#c4b5fd', 'line': '#c4b5fd', 'area_opacity': '0.55',
+        'faint': '#78716c', 'hero': '#c4b5fd',
         'track': '#30363d',
         'tile': '#241c33', 'tile_border': '#3d3454',
         'mix': ['#c4b5fd', '#8b5cf6', '#6d28d9', '#4c1d95'], 'mix_rest': '#3d444d',
@@ -127,10 +125,8 @@ def short_day(iso):
     date = dt.date.fromisoformat(iso)
     return f'{MONTHS[date.month - 1]} {date.day}'
 
-def subtitle_for(data, layout):
+def subtitle_for(data):
     if 360 <= data['span_days'] <= 372:
-        if layout == 'mobile':
-            return 'All-time · trailing year · UTC'
         return 'All-time totals · 1-year heatmap · UTC'
     start, end = data['window']
     return f'All-time · {start} – {end} · UTC'
@@ -451,14 +447,14 @@ def svg_doc(width, height, title, body):
 def frame(width, height, theme):
     return f'<rect x="0.5" y="0.5" width="{width - 1}" height="{height - 1}" rx="16" fill="{theme["bg"]}" stroke="{theme["border"]}"/>'
 
-def header(data, theme, layout, title_x, title_y, right_x):
+def header(data, theme, title_x, title_y, right_x):
     mark_y = title_y - 11
     subtitle_y = title_y + 20
     return ''.join([
         f'<rect x="{title_x}" y="{mark_y}" width="8" height="8" rx="2" fill="{theme["hero"]}"/>',
-        text(title_x + 14, title_y, 'AI coding usage', 15 if layout == 'desktop' else 14, theme['title'], 700),
+        text(title_x + 14, title_y, 'AI coding usage', 15, theme['title'], 700),
         text(right_x, title_y, 'tokscale', 12, theme['muted'], 500, anchor='end'),
-        text(title_x + 14, subtitle_y, subtitle_for(data, layout), 12, theme['muted']),
+        text(title_x + 14, subtitle_y, subtitle_for(data), 12, theme['muted']),
     ])
 
 def label_entries(entries, total, limit=4):
@@ -586,55 +582,6 @@ def heatmap(data, theme, grid_x, grid_y, max_width):
     grid_bottom = grid_y + 6 * step + cell
     return '\n'.join(parts), grid_bottom, width
 
-def area_chart(data, theme, x, y, width, height):
-    values = [day['total_tokens'] for day in data['days']]
-    n = len(values)
-    logs = [math.sqrt(value) for value in values]
-    peak = max(logs) if logs else 1
-    if peak <= 0:
-        peak = 1
-    plot_top = y + 22
-    plot_height = height - 22
-    coords = []
-    for index, magnitude in enumerate(logs):
-        if n == 1:
-            px = x + width / 2
-        else:
-            px = x + width * index / (n - 1)
-        py = plot_top + plot_height - plot_height * magnitude / peak
-        coords.append((px, py))
-    def pair(point):
-        return f'{point[0]:.2f},{point[1]:.2f}'
-    line = 'M' + pair(coords[0]) + ''.join('L' + pair(point) for point in coords[1:])
-    baseline = plot_top + plot_height
-    fill = line + f'L{coords[-1][0]:.2f},{baseline:.2f}L{coords[0][0]:.2f},{baseline:.2f}Z'
-    peak_index = max(range(n), key=lambda i: values[i])
-    peak_point = coords[peak_index]
-    anchor = 'middle'
-    label_x = peak_point[0]
-    if label_x < x + 36:
-        anchor = 'start'
-    elif label_x > x + width - 36:
-        anchor = 'end'
-    # Keep the peak figure in the top gutter so it never sits on the stroke.
-    label_y = y + 12
-    start, end = data['window']
-    tip = f'Daily tokens, square-root scale, {start} to {end}'
-    parts = [
-        '<defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1">',
-        f'<stop offset="0" stop-color="{theme["line"]}" stop-opacity="{theme["area_opacity"]}"/>',
-        f'<stop offset="1" stop-color="{theme["line"]}" stop-opacity="0.02"/>',
-        '</linearGradient></defs>',
-        f'<g data-chart="area"><title>{esc(tip)}</title>',
-        f'<line x1="{x:.2f}" y1="{baseline:.2f}" x2="{x + width:.2f}" y2="{baseline:.2f}" stroke="{theme["border"]}"/>',
-        f'<path d="{fill}" fill="url(#area)"/>',
-        f'<path d="{line}" fill="none" stroke="{theme["line"]}" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>',
-        f'<circle cx="{peak_point[0]:.2f}" cy="{peak_point[1]:.2f}" r="2.6" fill="{theme["line"]}" stroke="{theme["bg"]}" stroke-width="1"/>',
-        text(label_x, label_y, compact(values[peak_index], 2), 11, theme['muted'], 600, anchor=anchor),
-        '</g>',
-    ]
-    return ''.join(parts)
-
 def render_desktop(data, theme, as_of):
     width = 820
     left = 36
@@ -650,7 +597,7 @@ def render_desktop(data, theme, as_of):
     start, end = data['window']
     body = '\n'.join([
         frame(width, height, theme),
-        header(data, theme, 'desktop', left, 36, right),
+        header(data, theme, left, 36, right),
         text(left, 96, 'Total tokens', 12, theme['muted'], 600),
         text(left, 146, hero_compact(total), 48, theme['hero'], 700),
         dimension_tiles(data, theme, tiles_x, 78, right - tiles_x),
@@ -664,51 +611,8 @@ def render_desktop(data, theme, as_of):
     ])
     return svg_doc(width, height, card_title(data), body)
 
-def render_mobile(data, theme, as_of):
-    width = 360
-    pad = 16
-    right = width - pad
-    inner = right - pad
-    total = data['total_tokens']
-    peak = compact(data['peak_tokens'], 2)
-    tile_w = (inner - 10) / 2
-    parts = [
-        frame(width, 10, theme),
-        header(data, theme, 'mobile', pad, 32, right),
-        text(pad, 72, 'Total tokens', 11, theme['muted'], 600),
-        text(pad, 108, hero_compact(total), 36, theme['hero'], 700),
-        text(196, 72, 'Peak day', 11, theme['muted'], 600),
-        text(196, 108, peak, value_size_for(peak, 28), theme['hero'], 700),
-        text(196, 126, short_day(data['peak_date']), 11, theme['faint']),
-        metric_tile(pad, 142, tile_w, 86, 'Active days', f"{data['active_days']:,}", active_caption(data), theme, theme['title'],
-                    f"{data['active_days']} active days in {data['span_days']}"),
-        metric_tile(pad + tile_w + 10, 142, tile_w, 86, 'All-time rank', rank_label(data['rank']), 'on tokscale', theme, theme['title'],
-                    f"All-time rank {data['rank']}"),
-        share_block(pad, 248, inner, 'Models', data['models'], total, theme, 'models'),
-        share_block(pad, 310, inner, 'Clients', data['clients'], total, theme, 'clients'),
-        text(pad, 372, 'Daily tokens · sqrt scale', 11, theme['muted'], 500),
-    ]
-    chart_y = 380
-    chart_h = 104
-    parts.append(area_chart(data, theme, pad, chart_y, inner, chart_h))
-    date_y = chart_y + chart_h + 16
-    start, end = data['window']
-    parts.append(text(pad, date_y, start, 11, theme['muted']))
-    parts.append(text(right, date_y, end, 11, theme['muted'], anchor='end'))
-    status_y = date_y + 20
-    parts.append(text(pad, status_y, status_line(data, as_of), 11, theme['muted'], eid='ai-status'))
-    height = status_y + 18
-    parts[0] = frame(width, height, theme)
-    body = '\n'.join(parts)
-    return svg_doc(width, height, card_title(data), body)
-
-def render_usage(data, theme_name, layout, as_of):
-    theme = THEMES[theme_name]
-    if layout == 'desktop':
-        return render_desktop(data, theme, as_of)
-    if layout == 'mobile':
-        return render_mobile(data, theme, as_of)
-    raise InvalidData('unknown usage layout')
+def render_usage(data, theme_name, as_of):
+    return render_desktop(data, THEMES[theme_name], as_of)
 
 def update_ai(today, captured):
     # Official embeds exist at /api/embed/<user>/svg and /api/badge/<user>/svg.
@@ -719,8 +623,7 @@ def update_ai(today, captured):
     data = normalize_tokscale(profile, today, captured)
     rendered = []
     for theme_name in ('light', 'dark'):
-        rendered.append((f'ai-usage-{theme_name}.svg', render_usage(data, theme_name, 'desktop', today)))
-        rendered.append((f'ai-usage-mobile-{theme_name}.svg', render_usage(data, theme_name, 'mobile', today)))
+        rendered.append((f'ai-usage-{theme_name}.svg', render_usage(data, theme_name, today)))
     for _name, svg in rendered:
         ET.fromstring(svg)
     for name, svg in rendered:
