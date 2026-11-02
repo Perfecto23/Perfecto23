@@ -32,10 +32,10 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/ai-usage-dark.svg" />
-  <img width="100%" src="assets/ai-usage-light.svg" alt="来自 tokscale 的 AI 编程用量：累计 Token、单日峰值、近一年活跃天数、排名、近 30 天与前 30 天对比、按月合计、模型与客户端占比，以及每日热图" />
+  <img width="100%" src="assets/ai-usage-light.svg" alt="来自 tokscale 的 AI 编程用量：累计 Token、单日峰值、近一年活跃天数、排名、近 30 天、按月合计、模型与客户端占比，以及每日热图" />
 </picture>
 
-[查看 tokscale 主页](https://tokscale.ai/u/Perfecto23) · 公开数据，无需登录 · 近 30 天变化、按月合计与热图（UTC）
+[查看 tokscale 主页](https://tokscale.ai/u/Perfecto23) · 公开数据，无需登录 · 近 30 天、按月合计与热图（UTC）
 
 ---
 

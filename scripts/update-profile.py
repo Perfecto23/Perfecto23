@@ -107,15 +107,6 @@ def share(part, whole):
         return '<0.1%'
     return text + '%'
 
-def signed_change(current, previous):
-    if previous <= 0:
-        return None
-    pct = 100 * (current - previous) / previous
-    if abs(pct) < 0.05:
-        return '0% vs prior'
-    sign = '+' if pct > 0 else '−'
-    return f'{sign}{abs(pct):.1f}% vs prior'
-
 def client_label(name):
     key = str(name).strip().lower()
     if key in CLIENT_LABELS:
@@ -200,15 +191,12 @@ def period_stats(detail, end, length):
         'top_model': _top_entry(models, lambda name: name),
     }
 
-def recent_compare(detail, end, length=30):
-    recent = period_stats(detail, end, length)
-    prior = period_stats(detail, end - dt.timedelta(days=length), length)
-    recent['prior_tokens'] = prior['tokens']
-    recent['prior_active_days'] = prior['active_days']
-    recent['prior_start'] = prior['start']
-    recent['prior_end'] = prior['end']
-    recent['change_label'] = signed_change(recent['tokens'], prior['tokens'])
-    return recent
+def period_span(recent):
+    start = dt.date.fromisoformat(recent['start'])
+    end = dt.date.fromisoformat(recent['end'])
+    if start.year == end.year:
+        return f"{short_day(recent['start'])} – {short_day(recent['end'])}"
+    return f"{short_day(recent['start'])} {start.year} – {short_day(recent['end'])} {end.year}"
 
 def subtitle_for(data):
     if 360 <= data['span_days'] <= 372:
@@ -415,7 +403,7 @@ def normalize_tokscale(obj, as_of, captured_at):
         'span_days': span,
         'days': days,
         'months': months,
-        'recent': recent_compare(detail, end),
+        'recent': period_stats(detail, end, 30),
         'clients': client_rows,
         'models': model_rows,
         'current_day_partial': end == as_of,
@@ -730,11 +718,6 @@ def render_desktop(data, theme, as_of):
     total = data['total_tokens']
     tiles_x = left + 236
     recent = data['recent']
-    change = recent['change_label'] or 'No prior 30 days'
-    prior_tip = (
-        f"Prior 30 days {recent['prior_start']} – {recent['prior_end']}: "
-        f"{compact(recent['prior_tokens'])} tokens, {recent['prior_active_days']} active days"
-    )
     rule_y = 384
     month_y = 436
     months, month_bottom = month_chart(data, theme, left, month_y, inner)
@@ -754,9 +737,7 @@ def render_desktop(data, theme, as_of):
         share_block(left, 252, inner, 'Clients', data['clients'], total, theme, 'clients'),
         text(left, 316, 'Last 30 days', 12, theme['muted'], 600),
         text(left, 342, hero_compact(recent['tokens']), 22, theme['hero'], 700),
-        f'<g><title>{esc(prior_tip)}</title>'
-        + text(right, 342, change, 13, theme['title'], 600, anchor='end')
-        + '</g>',
+        text(right, 342, period_span(recent), 13, theme['muted'], 500, anchor='end'),
         text(left, 364, recent_meta(recent), 12, theme['muted'], 500),
         f'<line x1="{left}" y1="{rule_y}.5" x2="{right}" y2="{rule_y}.5" stroke="{theme["border"]}"/>',
         text(left, 408, 'Months · log', 12, theme['muted'], 600),
