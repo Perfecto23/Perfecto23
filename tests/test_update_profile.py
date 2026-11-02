@@ -79,6 +79,16 @@ class T(unittest.TestCase):
             ('2026-10', 58000, 5, True),
         ])
         self.assertEqual(sum(row['tokens'] for row in data['months']), sum(day['total_tokens'] for day in data['days']))
+        recent = data['recent']
+        self.assertEqual(recent['tokens'], 92000)
+        self.assertEqual(recent['active_days'], 12)
+        self.assertEqual(recent['top_client']['name'], 'codex')
+        self.assertEqual(recent['top_client']['tokens'], 48000)
+        self.assertEqual(recent['top_model']['name'], 'gpt-6-astra')
+        self.assertEqual(recent['top_model']['tokens'], 48000)
+        self.assertEqual(recent['start'], '2026-09-07')
+        self.assertEqual(recent['end'], '2026-10-06')
+        self.assertEqual(u.period_span(recent), 'Sep 7 – Oct 6')
         self.assertEqual(len(data['days']), 14)
         self.assertEqual(data['days'][0]['total_tokens'], 0)
         self.assertEqual(data['rank'], 286)
@@ -88,6 +98,14 @@ class T(unittest.TestCase):
         self.assertFalse(data['stale'])
         self.assertIn('tokscale', data['source'])
         self.assertNotIn('TokenTracker', data['source'])
+
+    def test_recent_window_ignores_older_days(self):
+        payload = fixture()
+        payload['contributions'].append(make_day(dt.date(2026, 8, 27), 10000, 'codex', 'gpt-6-astra'))
+        payload['stats']['totalTokens'] += 10000
+        data = u.normalize_tokscale(payload, TODAY, 'stamp')
+        self.assertEqual(data['recent']['tokens'], 92000)
+        self.assertEqual(data['total_tokens'], 102000)
 
     def test_missing_day_is_filled_with_zero(self):
         payload = fixture()
@@ -187,6 +205,10 @@ class T(unittest.TestCase):
         self.assertIn('data-month="2026-10"', light)
         self.assertIn('>29K<', light)
         self.assertIn('Busiest Oct 58K', light)
+        self.assertIn('Last 30 days', light)
+        self.assertIn('Sep 7 – Oct 6', light)
+        self.assertNotIn('vs prior', light)
+        self.assertIn('12 active · gpt-6-astra 52.2% · Codex 52.2%', light)
         self.assertIn('data-chart="heatmap"', light)
         self.assertEqual(light.count('data-date='), len(data['days']))
         self.assertIn('Less', light)

@@ -156,6 +156,48 @@ def month_summary(days):
         del row['last']
     return groups
 
+def _top_entry(mapping, labeler):
+    ranked = [(name, tokens) for name, tokens in mapping.items() if tokens > 0]
+    if not ranked:
+        return None
+    name, tokens = max(ranked, key=lambda item: (item[1], item[0]))
+    return {'name': name, 'label': labeler(name), 'tokens': tokens}
+
+def period_stats(detail, end, length):
+    start = end - dt.timedelta(days=length - 1)
+    tokens = 0
+    active = 0
+    clients = {}
+    models = {}
+    for offset in range(length):
+        row = detail.get(start + dt.timedelta(days=offset))
+        if row is None:
+            continue
+        total, client_acc, model_acc = row
+        tokens += total
+        if total:
+            active += 1
+        for name, value in client_acc.items():
+            clients[name] = clients.get(name, 0) + value
+        for name, value in model_acc.items():
+            models[name] = models.get(name, 0) + value
+    return {
+        'start': start.isoformat(),
+        'end': end.isoformat(),
+        'days': length,
+        'tokens': tokens,
+        'active_days': active,
+        'top_client': _top_entry(clients, client_label),
+        'top_model': _top_entry(models, lambda name: name),
+    }
+
+def period_span(recent):
+    start = dt.date.fromisoformat(recent['start'])
+    end = dt.date.fromisoformat(recent['end'])
+    if start.year == end.year:
+        return f"{short_day(recent['start'])} – {short_day(recent['end'])}"
+    return f"{short_day(recent['start'])} {start.year} – {short_day(recent['end'])} {end.year}"
+
 def subtitle_for(data):
     if 360 <= data['span_days'] <= 372:
         return 'All-time totals · 1-year heatmap · UTC'
@@ -295,6 +337,7 @@ def normalize_tokscale(obj, as_of, captured_at):
     if len(rows) > 5000:
         raise InvalidData('too many daily rows')
     by_date = {}
+    detail = {}
     clients = {}
     models = {}
     for row in rows:
@@ -302,6 +345,7 @@ def normalize_tokscale(obj, as_of, captured_at):
         if date in by_date:
             raise InvalidData('duplicate daily date')
         by_date[date] = total
+        detail[date] = (total, client_acc, model_acc)
         for name, tokens in client_acc.items():
             clients[name] = clients.get(name, 0) + tokens
         for name, tokens in model_acc.items():
@@ -359,6 +403,7 @@ def normalize_tokscale(obj, as_of, captured_at):
         'span_days': span,
         'days': days,
         'months': months,
+        'recent': period_stats(detail, end, 30),
         'clients': client_rows,
         'models': model_rows,
         'current_day_partial': end == as_of,
@@ -653,6 +698,18 @@ def month_chart(data, theme, x, y, width):
     parts.append('</g>')
     return '\n'.join(parts), y + plot_h + 16
 
+def recent_meta(recent):
+    bits = [f"{recent['active_days']} active"]
+    total = recent['tokens']
+    model = recent.get('top_model')
+    client = recent.get('top_client')
+    if model and total:
+        name = model['name'] if len(model['name']) <= 28 else model['name'][:27] + '…'
+        bits.append(name + ' ' + share(model['tokens'], total))
+    if client and total:
+        bits.append(client['label'] + ' ' + share(client['tokens'], total))
+    return ' · '.join(bits)
+
 def render_desktop(data, theme, as_of):
     width = 820
     left = 36
@@ -660,8 +717,9 @@ def render_desktop(data, theme, as_of):
     inner = right - left
     total = data['total_tokens']
     tiles_x = left + 236
-    rule_y = 312
-    month_y = 364
+    recent = data['recent']
+    rule_y = 384
+    month_y = 436
     months, month_bottom = month_chart(data, theme, left, month_y, inner)
     grid_y = month_bottom + 46
     chart, grid_bottom, _grid_width = heatmap(data, theme, left, grid_y, inner)
@@ -677,9 +735,13 @@ def render_desktop(data, theme, as_of):
         dimension_tiles(data, theme, tiles_x, 78, right - tiles_x),
         share_block(left, 188, inner, 'Models', data['models'], total, theme, 'models'),
         share_block(left, 252, inner, 'Clients', data['clients'], total, theme, 'clients'),
+        text(left, 316, 'Last 30 days', 12, theme['muted'], 600),
+        text(left, 342, hero_compact(recent['tokens']), 22, theme['hero'], 700),
+        text(right, 342, period_span(recent), 13, theme['muted'], 500, anchor='end'),
+        text(left, 364, recent_meta(recent), 12, theme['muted'], 500),
         f'<line x1="{left}" y1="{rule_y}.5" x2="{right}" y2="{rule_y}.5" stroke="{theme["border"]}"/>',
-        text(left, 336, 'Months · log', 12, theme['muted'], 600),
-        text(right, 336, f"Busiest {busiest['label']} {hero_compact(busiest['tokens'])}", 12, theme['title'], 600, anchor='end'),
+        text(left, 408, 'Months · log', 12, theme['muted'], 600),
+        text(right, 408, f"Busiest {busiest['label']} {hero_compact(busiest['tokens'])}", 12, theme['title'], 600, anchor='end'),
         months,
         chart,
         legend(left, legend_y, theme),
