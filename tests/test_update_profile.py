@@ -74,6 +74,11 @@ class T(unittest.TestCase):
         self.assertEqual(data['active_days'], 11)
         self.assertEqual(data['peak_tokens'], 14000)
         self.assertEqual(data['peak_date'], '2026-10-06')
+        self.assertEqual([(row['key'], row['tokens'], row['active_days'], row['partial']) for row in data['months']], [
+            ('2026-09', 29000, 6, True),
+            ('2026-10', 58000, 5, True),
+        ])
+        self.assertEqual(sum(row['tokens'] for row in data['months']), sum(day['total_tokens'] for day in data['days']))
         self.assertEqual(len(data['days']), 14)
         self.assertEqual(data['days'][0]['total_tokens'], 0)
         self.assertEqual(data['rank'], 286)
@@ -177,6 +182,11 @@ class T(unittest.TestCase):
             self.assertIn('78.6%', svg)
             self.assertIn('id="ai-status"', svg)
             self.assertIn(f'fill="{u.THEMES[theme]["bg"]}"', svg)
+        self.assertIn('data-chart="months"', light)
+        self.assertIn('data-month="2026-09"', light)
+        self.assertIn('data-month="2026-10"', light)
+        self.assertIn('>29K<', light)
+        self.assertIn('Busiest Oct 58K', light)
         self.assertIn('data-chart="heatmap"', light)
         self.assertEqual(light.count('data-date='), len(data['days']))
         self.assertIn('Less', light)

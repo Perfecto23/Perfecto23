@@ -125,6 +125,37 @@ def short_day(iso):
     date = dt.date.fromisoformat(iso)
     return f'{MONTHS[date.month - 1]} {date.day}'
 
+def month_summary(days):
+    groups = []
+    index = {}
+    for day in days:
+        date = dt.date.fromisoformat(day['date'])
+        key = f'{date.year:04d}-{date.month:02d}'
+        row = index.get(key)
+        if row is None:
+            row = {
+                'key': key, 'year': date.year, 'month': date.month,
+                'label': MONTHS[date.month - 1], 'tokens': 0, 'active_days': 0,
+                'first': date, 'last': date,
+            }
+            index[key] = row
+            groups.append(row)
+        row['tokens'] += day['total_tokens']
+        row['last'] = date
+        if day['total_tokens']:
+            row['active_days'] += 1
+    for row in groups:
+        first = dt.date(row['year'], row['month'], 1)
+        if row['month'] == 12:
+            nxt = dt.date(row['year'] + 1, 1, 1)
+        else:
+            nxt = dt.date(row['year'], row['month'] + 1, 1)
+        last = nxt - dt.timedelta(days=1)
+        row['partial'] = row['first'] > first or row['last'] < last
+        del row['first']
+        del row['last']
+    return groups
+
 def subtitle_for(data):
     if 360 <= data['span_days'] <= 372:
         return 'All-time totals · 1-year heatmap · UTC'
@@ -292,6 +323,7 @@ def normalize_tokscale(obj, as_of, captured_at):
     if not days:
         raise InvalidData('chart window is empty')
     peak = max(days, key=lambda day: (day['total_tokens'], day['date']))
+    months = month_summary(days)
     client_rows = [{'name': name, 'label': client_label(name), 'tokens': tokens}
                    for name, tokens in clients.items() if tokens > 0]
     model_rows = [{'name': name, 'tokens': tokens} for name, tokens in models.items() if tokens > 0]
@@ -326,6 +358,7 @@ def normalize_tokscale(obj, as_of, captured_at):
         'window': [start.isoformat(), end.isoformat()],
         'span_days': span,
         'days': days,
+        'months': months,
         'clients': client_rows,
         'models': model_rows,
         'current_day_partial': end == as_of,
@@ -582,6 +615,44 @@ def heatmap(data, theme, grid_x, grid_y, max_width):
     grid_bottom = grid_y + 6 * step + cell
     return '\n'.join(parts), grid_bottom, width
 
+def month_chart(data, theme, x, y, width):
+    rows = data['months']
+    count = len(rows)
+    gap = 8
+    slot = (width - gap * (count - 1)) / count if count else 0
+    bar_w = min(26, max(6, slot - 10))
+    plot_h = 48
+    positive = [row['tokens'] for row in rows if row['tokens'] > 0]
+    floor = math.log10(min(positive)) if positive else 0
+    ceiling = math.log10(max(positive)) if positive else 1
+    span = ceiling - floor
+    repeated = len({row['label'] for row in rows}) < count
+    parts = ['<g data-chart="months">']
+    for index, row in enumerate(rows):
+        left = x + index * (slot + gap)
+        cx = round(left + slot / 2, 1)
+        if row['tokens'] <= 0 or span <= 0:
+            bar_h = plot_h if row['tokens'] > 0 else 0
+        else:
+            bar_h = 6 + (plot_h - 6) * (math.log10(row['tokens']) - floor) / span
+        bar_x = cx - bar_w / 2
+        bar_y = y + plot_h - bar_h
+        suffix = ' · partial' if row['partial'] else ''
+        tip = f"{row['key']}: {compact(row['tokens'])} tokens, {row['active_days']} active days{suffix}"
+        opacity = '1' if positive and row['tokens'] == max(positive) else '0.72'
+        parts.append(
+            f'<rect x="{bar_x:.1f}" y="{bar_y:.1f}" width="{bar_w:.1f}" height="{bar_h:.1f}" rx="3" fill="{theme["hero"]}" fill-opacity="{opacity}" data-month="{row["key"]}">'
+            f'<title>{esc(tip)}</title></rect>'
+        )
+        name = row['label']
+        if repeated and slot >= 46:
+            name = f"{row['label']} {row['year'] % 100:02d}"
+        parts.append(text(cx, y + plot_h + 16, name, 11, theme['muted'], 600, anchor='middle'))
+        if row['tokens'] > 0 and slot >= 34:
+            parts.append(text(cx, round(bar_y - 6, 1), hero_compact(row['tokens']), 10, theme['faint'], 600, anchor='middle'))
+    parts.append('</g>')
+    return '\n'.join(parts), y + plot_h + 16
+
 def render_desktop(data, theme, as_of):
     width = 820
     left = 36
@@ -590,11 +661,14 @@ def render_desktop(data, theme, as_of):
     total = data['total_tokens']
     tiles_x = left + 236
     rule_y = 312
-    grid_y = 338
+    month_y = 364
+    months, month_bottom = month_chart(data, theme, left, month_y, inner)
+    grid_y = month_bottom + 46
     chart, grid_bottom, _grid_width = heatmap(data, theme, left, grid_y, inner)
     legend_y = grid_bottom + 22
     height = legend_y + 18
     start, end = data['window']
+    busiest = max(data['months'], key=lambda row: (row['tokens'], row['key']))
     body = '\n'.join([
         frame(width, height, theme),
         header(data, theme, left, 36, right),
@@ -604,6 +678,9 @@ def render_desktop(data, theme, as_of):
         share_block(left, 188, inner, 'Models', data['models'], total, theme, 'models'),
         share_block(left, 252, inner, 'Clients', data['clients'], total, theme, 'clients'),
         f'<line x1="{left}" y1="{rule_y}.5" x2="{right}" y2="{rule_y}.5" stroke="{theme["border"]}"/>',
+        text(left, 336, 'Months · log', 12, theme['muted'], 600),
+        text(right, 336, f"Busiest {busiest['label']} {hero_compact(busiest['tokens'])}", 12, theme['title'], 600, anchor='end'),
+        months,
         chart,
         legend(left, legend_y, theme),
         text((left + right) // 2, legend_y, f'{start} – {end}', 11, theme['muted'], anchor='middle'),
